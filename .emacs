@@ -22,7 +22,6 @@
 (add-hook 'session-after-jump-to-last-change-hook
           'le::maybe-reveal)
 
-(require 'flyspell)
 (require 'ecb)
 (require 'elscreen)
 (elscreen-start)
