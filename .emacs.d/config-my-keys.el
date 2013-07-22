@@ -35,6 +35,7 @@
 
 (define-key my-keys-minor-mode-map (kbd "C-x b") 'helm-mini) 
 (define-key my-keys-minor-mode-map (kbd "C-x C-f") 'helm-find-files) 
+(define-key my-keys-minor-mode-map (kbd "C-x m") 'browse-url-at-point)
 
 (define-key my-keys-minor-mode-map (kbd "C-h r") 'yari-helm)
 (define-key my-keys-minor-mode-map (kbd "C-h f") 'find-function)
