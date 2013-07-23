@@ -1,4 +1,5 @@
 (require 'erc)
+(require 'erc-track)
 
 (erc-spelling-mode 1)
 
@@ -9,7 +10,9 @@
   '(progn
  
      ;; Set personal information
-     (setq erc-disable-ctcp-replies t)
+     (setq erc-disable-ctcp-replies t
+           erc-track-exclude-server-buffer t
+           erc-track-showcount t)
  (setq erc-quit-reason-various-alist
         '(("brb"    "I'll be right back.")
           ("lunch"  "Having lunch.")
