@@ -5,6 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(ac-quick-help-delay 1.0)
  '(custom-enabled-themes (quote (tango-dark)))
+'(delete-selection-mode 1)
  '(erc-hide-list (quote ("JOIN" "KICK" "NICK" "PART" "QUIT" "MODE")))
  '(erc-lurker-hide-list (quote ("JOIN" "KICK" "NICK" "PART" "QUIT" "MODE")))
  '(erc-lurker-threshold-time 84600)
@@ -18,6 +19,8 @@
  '(global-hi-lock-mode nil)
  '(global-undo-tree-mode t)
  '(global-visual-line-mode t)
+ '(helm-adaptative-mode t nil (helm-adaptative))
+ '(helm-ff-auto-update-initial-value nil)
  '(ido-ubiquitous-mode t)
  '(iswitchb-mode nil)
  '(kill-whole-line t)
