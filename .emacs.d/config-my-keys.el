@@ -34,12 +34,14 @@
 (define-key my-keys-minor-mode-map (kbd "C-o") 'session-jump-to-last-change) 
 
 (define-key my-keys-minor-mode-map (kbd "C-x b") 'helm-mini) 
-(define-key my-keys-minor-mode-map (kbd "C-x C-f") 'helm-find-files) 
+(define-key my-keys-minor-mode-map (kbd "C-x C-f") 'dired) 
 (define-key my-keys-minor-mode-map (kbd "C-x m") 'browse-url-at-point)
 
 (define-key my-keys-minor-mode-map (kbd "C-h r") 'yari-helm)
-(define-key my-keys-minor-mode-map (kbd "C-h f") 'find-function)
-(define-key my-keys-minor-mode-map (kbd "C-h v") 'find-variable)
+(define-key my-keys-minor-mode-map (kbd "C-h f") 'describe-function) 
+(define-key my-keys-minor-mode-map (kbd "C-h v") 'describe-variable)
+(define-key my-keys-minor-mode-map (kbd "C-h C-f") 'find-function) 
+(define-key my-keys-minor-mode-map (kbd "C-h C-v") 'find-variable)
 (define-key my-keys-minor-mode-map (kbd "C-h a") 'helm-apropos)
 
 (define-key my-keys-minor-mode-map (kbd "C-r") 'undo-tree-undo)

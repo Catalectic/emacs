@@ -24,6 +24,9 @@
   (interactive)
   (dotimes (i 10) (ac-previous)))
 
+; Hack for performance in Helm, especially to switch buffers
+(defun helm-highlight-buffers (x y) nil)
+
 (require 'icomplete+)
 
 ; Icicle
