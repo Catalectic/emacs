@@ -11,16 +11,20 @@
 
 (add-hook 'minibuffer-setup-hook 'my-minibuffer-setup-hook)
 
-(define-key my-keys-minor-mode-map (kbd "M-j") 'backward-char)
-(define-key my-keys-minor-mode-map (kbd "M-l") 'forward-char)
-(define-key my-keys-minor-mode-map (kbd "M-i") 'previous-line)
-(define-key my-keys-minor-mode-map (kbd "M-k") 'next-line)
+; Uncouple C-i and TAB
+(define-key input-decode-map (kbd "C-i") (kbd "H-C-i"))
+
+(define-key my-keys-minor-mode-map (kbd "M-i") '(lambda () 
+  (interactive) (kill-visual-line 0)))
+(define-key my-keys-minor-mode-map (kbd "M-l") 'kill-word)
+(define-key my-keys-minor-mode-map (kbd "M-j") 'backward-kill-word)
+(define-key my-keys-minor-mode-map (kbd "M-k") 'kill-visual-line)
 (define-key my-keys-minor-mode-map (kbd "M-p") 'backward-word)
 (define-key my-keys-minor-mode-map (kbd "M-n") 'forward-word)
 (define-key my-keys-minor-mode-map (kbd "M-f") 'my-forward-to-indentation)
 (define-key my-keys-minor-mode-map (kbd "M-b") 'my-backward-to-indentation)
 (define-key my-keys-minor-mode-map (kbd "M-u") 'eval-last-sexp)
-(define-key my-keys-minor-mode-map (kbd "M-x") 'helm-M-x) 
+(define-key my-keys-minor-mode-map (kbd "M-x") 'helm-M-x)
 
 (define-key my-keys-minor-mode-map (kbd "M-C-s") 'kill-sentence) 
 (define-key my-keys-minor-mode-map (kbd "M-C-r") 'kill-word) 
@@ -28,13 +32,17 @@
 (define-key my-keys-minor-mode-map (kbd "C-f") 'ido-find-file)
 (define-key my-keys-minor-mode-map (kbd "C-v") ' scroll-up-command)
 (define-key my-keys-minor-mode-map (kbd "C-b") 'scroll-down-command)
-(define-key my-keys-minor-mode-map (kbd "C-t") 'elscreen-toggle)
-(define-key my-keys-minor-mode-map (kbd "C-n") 'next-buffer)
-(define-key my-keys-minor-mode-map (kbd "C-p") 'previous-buffer)
-(define-key my-keys-minor-mode-map (kbd "C-o") 'session-jump-to-last-change) 
+(define-key my-keys-minor-mode-map (kbd "C-t") 'ido-switch-buffer)
+(define-key my-keys-minor-mode-map (kbd "C-n") 'elscreen-next)
+(define-key my-keys-minor-mode-map (kbd "C-p") 'elscreen-previous)
+(define-key my-keys-minor-mode-map (kbd "C-o") 'session-jump-to-last-change)
+(define-key my-keys-minor-mode-map (kbd "C-j") 'backward-char)
+(define-key my-keys-minor-mode-map (kbd "C-l") 'forward-char)
+(define-key my-keys-minor-mode-map (kbd "H-C-i") 'previous-line)
+(define-key my-keys-minor-mode-map (kbd "C-k") 'next-line)
 
 (define-key my-keys-minor-mode-map (kbd "C-x b") 'helm-mini) 
-(define-key my-keys-minor-mode-map (kbd "C-x C-f") 'dired) 
+(define-key my-keys-minor-mode-map (kbd "C-x C-f") 'helm-find-files) 
 (define-key my-keys-minor-mode-map (kbd "C-x m") 'browse-url-at-point)
 
 (define-key my-keys-minor-mode-map (kbd "C-h r") 'yari-helm)

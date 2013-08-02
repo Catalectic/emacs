@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(ac-quick-help-delay 1.0)
  '(custom-enabled-themes (quote (tango-dark)))
-'(delete-selection-mode 1)
+ '(delete-selection-mode 1)
  '(erc-hide-list (quote ("JOIN" "KICK" "NICK" "PART" "QUIT" "MODE")))
  '(erc-lurker-hide-list (quote ("JOIN" "KICK" "NICK" "PART" "QUIT" "MODE")))
  '(erc-lurker-threshold-time 84600)
@@ -34,5 +34,5 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#2e3436" :foreground "#eeeeec" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 90 :width normal :foundry "unknown" :family "Terminus"))))
- '(hl-line ((t (:inherit nil :weight extra-bold)))))
+ '(default ((t (:inherit nil :stipple nil :background "#2e3436" :foreground "#eeeeec" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 90 :width normal :family "Arial"))))
+ '(hl-line ((t (:inherit nil)))))

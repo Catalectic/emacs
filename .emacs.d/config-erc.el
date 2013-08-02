@@ -2,6 +2,7 @@
 (require 'erc-track)
 
 (erc-spelling-mode 1)
+(erc-track-mode 1)
 
 (define-key erc-mode-map (kbd "<up>") 'erc-previous-command)
 (define-key erc-mode-map (kbd "<down>") 'erc-next-command)

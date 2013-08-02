@@ -22,7 +22,7 @@
 (add-hook 'session-after-jump-to-last-change-hook
           'le::maybe-reveal)
 
-(require 'ecb)
+(require 'chm-view)
 (require 'elscreen)
 (elscreen-start)
 

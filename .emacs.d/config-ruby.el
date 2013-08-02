@@ -1,7 +1,7 @@
 ; Obsolete function, some package hasn't redefined it
 (defun inf-ruby-keys () (inf-ruby-setup-keybindings))
 
-(add-to-list 'load-path "/home/user/.emacs.d/rails-minor-mode/")
+(add-to-list 'load-path "/home/user/.emacs.d/emacs-rails/")
 
 (require 'flymake)
 (require 'starter-kit-ruby)
@@ -31,6 +31,9 @@
           (lambda ()
             (add-to-list 'ac-sources 'ac-source-robe)))
 
+(define-key inf-ruby-mode-map (kbd "<up>") 'comint-previous-input)
+(define-key inf-ruby-mode-map (kbd "<down>") 'comint-next-input)
+
 ;; Invoke ruby with '-c' to get syntax checking
 (defun flymake-ruby-init ()
   (let* ((temp-file   (flymake-init-create-temp-buffer-copy
@@ -49,13 +52,13 @@
 (set-face-background 'flymake-warnline "dark slate blue")
 
      ;;; nxml (HTML ERB template support)
-(require 'nxml-mode)
-(load "~/.emacs.d/nxhtml/autostart.el")
-     (setq
-      nxhtml-global-minor-mode t
-      mumamo-chunk-coloring 'submode-colored
-      nxhtml-skip-welcome t
-      indent-region-mode t
-      rng-nxml-auto-validate-flag nil
-      nxml-degraded nil)
- (add-to-list 'auto-mode-alist '("\\.html\\.erb\\'" . nxhtml-mode))
+;(require 'nxml-mode)
+;(load "~/.emacs.d/nxhtml/autostart.el")
+;     (setq
+;      nxhtml-global-minor-mode t
+;      mumamo-chunk-coloring 'submode-colored
+;      nxhtml-skip-welcome t
+;      indent-region-mode t
+;      rng-nxml-auto-validate-flag nil
+;      nxml-degraded nil)
+; (add-to-list 'auto-mode-alist '("\\.html\\.erb\\'" . nxhtml-mode))

@@ -9,12 +9,14 @@
     (other-window 1)
     (w3m-browse-url url newwin)))
 
-(add-hook 'w3m-mode-hook
-          (lambda ()
+(add-hook 'w3m-mode-hook 'w3m-mode-bindings)
+
+(defun w3m-mode-bindings ()
             (local-set-key (kbd "i") 'previous-line)
             (local-set-key (kbd "j") 'backward-char)
             (local-set-key (kbd "k") 'next-line)
             (local-set-key (kbd "l") 'forward-char)
 
             (local-set-key (kbd "h") 'w3m-db-history)
-            (local-set-key (kbd "q") 'w3m-delete-buffer)))
+            (local-set-key (kbd "q") 'w3m-delete-buffer)
+            (local-set-key (kbd "M-a") 'backward-sentence))
