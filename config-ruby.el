@@ -10,6 +10,7 @@
 (require 'robe)
 (require 'rails)
 (require 'rspec-mode)
+(require 'smartparens-ruby)
 
 (add-hook 'ruby-mode-hook 'ruby-electric-mode)
 (add-hook 'ruby-mode-hook 'rails-minor-mode)
