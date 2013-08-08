@@ -32,7 +32,6 @@
           'le::maybe-reveal)
 
 (require 'chm-view)
-(require 'web-mode)
 (require 'elscreen)
 (elscreen-start)
 

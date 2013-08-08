@@ -51,15 +51,3 @@
 
 (set-face-background 'flymake-errline "red4")
 (set-face-background 'flymake-warnline "dark slate blue")
-
-     ;;; nxml (HTML ERB template support)
-;(require 'nxml-mode)
-;(load "~/.emacs.d/nxhtml/autostart.el")
-;     (setq
-;      nxhtml-global-minor-mode t
-;      mumamo-chunk-coloring 'submode-colored
-;      nxhtml-skip-welcome t
-;      indent-region-mode t
-;      rng-nxml-auto-validate-flag nil
-;      nxml-degraded nil)
-; (add-to-list 'auto-mode-alist '("\\.html\\.erb\\'" . nxhtml-mode))
