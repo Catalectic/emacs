@@ -3,14 +3,14 @@
 
 (add-to-list 'load-path "/home/user/.emacs.d/emacs-rails/")
 
-(require 'flymake)
 (require 'starter-kit-ruby)
-(require 'flymake-ruby)
 (require 'ruby-electric)
 (require 'robe)
 (require 'rails)
 (require 'rspec-mode)
 (require 'smartparens-ruby)
+
+(rvm-use "2.0.0" "global")
 
 (add-hook 'ruby-mode-hook 'ruby-electric-mode)
 (add-hook 'ruby-mode-hook 'rails-minor-mode)
@@ -51,3 +51,5 @@
 
 (set-face-background 'flymake-errline "red4")
 (set-face-background 'flymake-warnline "dark slate blue")
+
+(provide 'config-ruby)
