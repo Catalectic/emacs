@@ -10,7 +10,7 @@
  '(custom-safe-themes
    (quote
     ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "e16a771a13a202ee6e276d06098bc77f008b73bbac4d526f160faa2d76c1dd0e" "fc6e906a0e6ead5747ab2e7c5838166f7350b958d82e410257aeeb2820e8a07a" default)))
- '(delete-selection-mode 1)
+ '(delete-selection-mode t)
  '(erc-hide-list (quote ("JOIN" "KICK" "NICK" "PART" "QUIT" "MODE")))
  '(erc-lurker-hide-list (quote ("JOIN" "KICK" "NICK" "PART" "QUIT" "MODE")))
  '(erc-lurker-threshold-time 84600)
@@ -20,7 +20,7 @@
  '(erc-spelling-mode t)
  '(erc-truncate-mode t)
  '(erc-whowas-on-nosuchnick t)
- '(font-use-system-font )
+ '(font-use-system-font nil)
  '(global-auto-complete-mode t)
  '(global-hi-lock-mode nil)
  '(global-undo-tree-mode t)
