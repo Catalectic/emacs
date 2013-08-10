@@ -33,3 +33,5 @@
 
    (setq erc-quit-reason-various-alist
         '(("^$" "Quit")))))
+
+(provide 'config-erc)

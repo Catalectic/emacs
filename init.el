@@ -8,15 +8,6 @@
         ("Tromey" . "http://tromey.com/elpa/")))
 (package-initialize)
 
-(setq my-packages '(smartparens dired+ ac-helm auto-complete bitlbee chm-view coffee-mode elscreen enh-ruby-mode flymake-coffee flymake-css flymake-ruby flymake-sass flymake-easy helm-descbinds helm-ls-git helm-projectile helm-rails helm-rubygems-local helm icomplete+ inflections popup projectile dash robe rspec-mode ruby-electric ruby-end ruby-tools rvm s sass-mode haml-mode ruby-mode session starter-kit-bindings starter-kit-eshell starter-kit-ruby starter-kit magit ido-ubiquitous smex find-file-in-project idle-highlight-mode paredit inf-ruby twittering-mode undo-tree w3m yari))
-
-(mapc
- (lambda (package)
-   (or (package-installed-p package)
-       (if (y-or-n-p (format "Package %s is missing. Install it? " package)) 
-           (package-install package))))
- '(dired+ magit rainbow-mode))
-
 (require 'session)
 (session-initialize)
 (defun le::maybe-reveal ()
@@ -35,8 +26,8 @@
 (require 'elscreen)
 (elscreen-start)
 
-(require 'config-completion)
 (require 'config-my-functions)
+(require 'config-completion)
 (require 'config-prog)
 (require 'config-ruby)
 (require 'config-w3m)
