@@ -42,6 +42,8 @@
 (define-key my-keys-minor-mode-map (kbd "C-l") 'forward-char)
 (define-key my-keys-minor-mode-map (kbd "H-C-i") 'previous-line)
 (define-key my-keys-minor-mode-map (kbd "C-k") 'next-line)
+(define-key my-keys-minor-mode-map (kbd "C-;") 'recenter-top-bottom)
+(define-key my-keys-minor-mode-map (kbd "C-\'") 'flyspell-auto-correct-previous-word)
 
 (define-key my-keys-minor-mode-map (kbd "C-x b") 'helm-mini) 
 (define-key my-keys-minor-mode-map (kbd "C-x C-f") 'helm-find-files) 
@@ -74,3 +76,6 @@
 (define-key my-keys-minor-mode-map (kbd "<f12>") 'save-buffer)
 
 (define-key my-keys-minor-mode-map (kbd "H-3") 'my-split-window) 
+
+(provide 'config-my-keys)
+

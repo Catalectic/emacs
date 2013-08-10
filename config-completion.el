@@ -51,3 +51,5 @@
 ;; (define-key map (kbd "<tab>") 'icicle-apropos-complete)
 ;; (define-key map (kbd "C-o") 'icicle-prefix-complete)
 ;; (define-key map (kbd "C-s") 'icicle-narrow-candidates))
+
+(provide 'config-completion)
