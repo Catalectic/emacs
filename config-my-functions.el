@@ -65,13 +65,10 @@
     (split-window-right))
   (balance-windows)) 
 
-    (defconst emacs-tmp-dir (format "%s%s%s/" temporary-file-directory "emacs" (user-uid)))
-    (setq backup-directory-alist
-        `((".*" . ,emacs-tmp-dir)))
-    (setq auto-save-file-name-transforms
-        `((".*" ,emacs-tmp-dir t)))
-    (setq auto-save-list-file-prefix
-        emacs-tmp-dir)
+(setq backup-directory-alist
+          `((".*" . ,temporary-file-directory)))
+ (setq auto-save-file-name-transforms
+          `((".*" ,temporary-file-directory t)))
 
 (setq
    backup-by-copying t      ; don't clobber symlinks
