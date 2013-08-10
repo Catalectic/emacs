@@ -40,16 +40,6 @@
       (forward-line -1)
       (forward-char col))))
 
-(defun move-line-up (n)
-  "Move the current line up by N lines."
-  (interactive "p")
-  (move-line (if (null n) -1 (- n))))
-
-(defun move-line-down (n)
-  "Move the current line down by N lines."
-  (interactive "p")
-  (move-line (if (null n) 1 n)))
-
 (defun repeat-shell-command ()
   "Repeat most recently executed shell command."
   (interactive)
@@ -75,29 +65,19 @@
     (split-window-right))
   (balance-windows)) 
 
+    (defconst emacs-tmp-dir (format "%s%s%s/" temporary-file-directory "emacs" (user-uid)))
+    (setq backup-directory-alist
+        `((".*" . ,emacs-tmp-dir)))
+    (setq auto-save-file-name-transforms
+        `((".*" ,emacs-tmp-dir t)))
+    (setq auto-save-list-file-prefix
+        emacs-tmp-dir)
 
-;; ------------------------------------------------ autosave and backup
-;; Put autosave files (ie #foo#) in one place, *not* scattered all over the
-;; file system! (The make-autosave-file-name function is invoked to determine
-;; the filename of an autosave file.) 
-(defvar autosave-dir (concat "/tmp/emacs_" (user-login-name) "/"))
-(make-directory autosave-dir t)
- 
-(defun auto-save-file-name-p (filename)
-  (string-match "^#.*#$" (file-name-nondirectory filename)))
- 
-(defun make-auto-save-file-name ()
-   (concat autosave-dir
-           (if buffer-file-name
-               (concat "#" (file-name-nondirectory buffer-file-name) "#")
-             (expand-file-name
-              (concat "#%" (buffer-name) "#")))))
- 
-;; Put backup files (ie foo~) in one place too. (The backup-directory-alist
-;; list contains regexp=>directory mappings; filenames matching a regexp are
-;; backed up in the corresponding directory. Emacs will mkdir it if necessary.)
- 
-(defvar backup-dir (concat "/tmp/emacs_backups/" (user-login-name) "/"))
-(setq backup-directory-alist (list (cons "." backup-dir)))
-(setq bkup-backup-directory-info (list (cons "." backup-dir)))
-(setq make-backup-files nil)
+(setq
+   backup-by-copying t      ; don't clobber symlinks
+   delete-old-versions t
+   kept-new-versions 6
+   kept-old-versions 2
+   version-control t)       ; use versioned backups
+
+(provide 'config-my-functions)
