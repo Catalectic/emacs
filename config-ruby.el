@@ -15,8 +15,6 @@
 (add-hook 'ruby-mode-hook 'ruby-electric-mode)
 (add-hook 'ruby-mode-hook 'rails-minor-mode)
 (add-hook 'ruby-mode-hook 'robe-mode)
-(remove-hook 'ruby-mode-hook 'whitespace-mode)
-(remove-hook 'prog-mode-hook 'idle-highlight-mode)
 
 (add-hook 'ruby-mode-hook
           (lambda ()
@@ -28,6 +26,5 @@
 
 (define-key inf-ruby-mode-map (kbd "<up>") 'comint-previous-input)
 (define-key inf-ruby-mode-map (kbd "<down>") 'comint-next-input)
-
 
 (provide 'config-ruby)
