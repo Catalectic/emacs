@@ -13,7 +13,15 @@
      ;; Set personal information
      (setq erc-disable-ctcp-replies t
            erc-track-exclude-server-buffer t
-           erc-track-showcount t)
+           erc-track-showcount t
+           erc-hide-list (quote ("JOIN" "KICK" "NICK" "PART" "QUIT" "MODE"))
+           erc-lurker-hide-list (quote ("JOIN" "KICK" "NICK" "PART" "QUIT" "MODE"))
+           erc-lurker-threshold-time 84600
+           erc-max-buffer-size 100000
+           erc-nick-uniquifier "_"
+           erc-spelling-mode t
+           erc-truncate-mode t
+           erc-whowas-on-nosuchnick t)
  (setq erc-quit-reason-various-alist
         '(("brb"    "I'll be right back.")
           ("lunch"  "Having lunch.")
@@ -22,7 +30,6 @@
           ("sleep"  "Sleeping.")
           ("work"   "Getting work done.")
           (".*"     "Quit")))
-
   (setq erc-part-reason-various-alist erc-quit-reason-various-alist
         erc-part-reason               'erc-part-reason-various
         erc-quit-reason               'erc-quit-reason-various)    (setq erc-part-reason 'erc-part-reason-various)

@@ -6,21 +6,13 @@
  '(ac-quick-help-delay 1.0)
  '(ansi-color-names-vector
    ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#ad7fa8" "#8cc4ff" "#eeeeec"])
+ '(auto-indent-key-for-end-of-line-then-newline "<M-RET>")
  '(auto-indent-on-save-file t)
  '(custom-enabled-themes (quote (solarized-dark)))
  '(custom-safe-themes
    (quote
     ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "e16a771a13a202ee6e276d06098bc77f008b73bbac4d526f160faa2d76c1dd0e" "fc6e906a0e6ead5747ab2e7c5838166f7350b958d82e410257aeeb2820e8a07a" default)))
  '(delete-selection-mode t)
- '(erc-hide-list (quote ("JOIN" "KICK" "NICK" "PART" "QUIT" "MODE")))
- '(erc-lurker-hide-list (quote ("JOIN" "KICK" "NICK" "PART" "QUIT" "MODE")))
- '(erc-lurker-threshold-time 84600)
- '(erc-max-buffer-size 100000)
- '(erc-nick (quote ("Aliquant")))
- '(erc-nick-uniquifier "_")
- '(erc-spelling-mode t)
- '(erc-truncate-mode t)
- '(erc-whowas-on-nosuchnick t)
  '(font-use-system-font nil)
  '(global-auto-complete-mode t)
  '(global-hi-lock-mode nil)
