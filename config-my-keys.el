@@ -17,13 +17,13 @@
 (define-key my-keys-minor-mode-map (kbd "M-i") '
 (lambda () (interactive) 
   (kill-visual-line 0)))
-(define-key my-keys-minor-mode-map (kbd "M-l") 'forward-word)
-(define-key my-keys-minor-mode-map (kbd "M-j") 'backward-word)
+(define-key my-keys-minor-mode-map (kbd "M-l") 'kill-word)
+(define-key my-keys-minor-mode-map (kbd "M-j") 'backward-kill-word)
 (define-key my-keys-minor-mode-map (kbd "M-k") 'kill-visual-line)
-(define-key my-keys-minor-mode-map (kbd "M-p") 'smart-symbol-go-backward)
-(define-key my-keys-minor-mode-map (kbd "M-n") 'smart-symbol-go-forward)
-(define-key my-keys-minor-mode-map (kbd "M-f") 'backward-sexp)
-(define-key my-keys-minor-mode-map (kbd "M-b") 'forward-sexp)
+(define-key my-keys-minor-mode-map (kbd "M-p") 'backward-sexp)
+(define-key my-keys-minor-mode-map (kbd "M-n") 'forward-sexp)
+(define-key my-keys-minor-mode-map (kbd "M-f") 'forward-word)
+(define-key my-keys-minor-mode-map (kbd "M-b") 'backward-word)
 (define-key my-keys-minor-mode-map (kbd "M-u") 'eval-last-sexp)
 (define-key my-keys-minor-mode-map (kbd "M-v") 'query-replace-regexp)
 (define-key my-keys-minor-mode-map (kbd "M-x") 'helm-M-x)
@@ -55,9 +55,9 @@
 (define-key my-keys-minor-mode-map (kbd "C-;") 'recenter-top-bottom)
 (define-key my-keys-minor-mode-map (kbd "C-\'") 'flyspell-auto-correct-previous-word)
 (define-key my-keys-minor-mode-map (kbd "C-=") 'er/expand-region)
-(define-key my-keys-minor-mode-map (kbd "RET") 'newline-and-indent)
+(define-key my-keys-minor-mode-map (kbd "C-.") 'isearch-forward-symbol-at-point)
 
-(global-set-key (kbd "C-c j") 'repeat-shell-command)
+(define-key my-keys-minor-mode-map (kbd "C-c j") 'repeat-shell-command)
 (define-key my-keys-minor-mode-map (kbd "C-x b") 'helm-mini) 
 (define-key my-keys-minor-mode-map (kbd "C-x C-f") 'helm-find-files) 
 (define-key my-keys-minor-mode-map (kbd "C-x m") 'browse-url-at-point)
@@ -99,6 +99,7 @@
 
 (define-key prog-mode-map (kbd "M-a") 'beginning-of-defun)
 (define-key prog-mode-map (kbd "M-e") 'end-of-defun)
+(define-key prog-mode-map (kbd "RET") 'newline-and-indent)
 
 (provide 'config-my-keys)
 
