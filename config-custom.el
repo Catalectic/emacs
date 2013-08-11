@@ -7,7 +7,7 @@
  '(ansi-color-names-vector
    ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#ad7fa8" "#8cc4ff" "#eeeeec"])
  '(auto-indent-key-for-end-of-line-then-newline "<M-RET>")
- '(auto-indent-on-save-file t)
+ '(auto-indent-on-save-file nil)
  '(custom-enabled-themes (quote (solarized-dark)))
  '(custom-safe-themes
    (quote
