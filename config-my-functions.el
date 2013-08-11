@@ -65,18 +65,6 @@
     (split-window-right))
   (balance-windows)) 
 
-(setq backup-directory-alist
-          `((".*" . ,temporary-file-directory)))
- (setq auto-save-file-name-transforms
-          `((".*" ,temporary-file-directory t)))
-
-(setq
-   backup-by-copying t      ; don't clobber symlinks
-   delete-old-versions t
-   kept-new-versions 6
-   kept-old-versions 2
-   version-control t)       ; use versioned backups
-
   (defvar installed-packages-list "~/.emacs.d/packages.txt")
 
   (defun save-installed-packages-list () 

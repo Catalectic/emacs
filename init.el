@@ -33,6 +33,7 @@
 (require 'config-w3m)
 (require 'config-erc)
 (require 'config-my-keys)
+(require 'config-setq)
 
 (setq custom-file "~/.emacs.d/config-custom.el")
 (load custom-file)
@@ -40,8 +41,6 @@
 (load-file "~/.emacs.d/private.el")
 
 (global-undo-tree-mode)
-
-(setq debug-on-error t)
 
 ; Hack for obsolete macro in Rails
 (remprop 'flet 'byte-obsolete-info)
