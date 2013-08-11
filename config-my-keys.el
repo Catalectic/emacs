@@ -54,6 +54,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-o") 'session-jump-to-last-change)
 (define-key my-keys-minor-mode-map (kbd "C-;") 'recenter-top-bottom)
 (define-key my-keys-minor-mode-map (kbd "C-\'") 'flyspell-auto-correct-previous-word)
+(define-key my-keys-minor-mode-map (kbd "C-=") 'er/expand-region)
 (define-key my-keys-minor-mode-map (kbd "RET") 'newline-and-indent)
 
 (global-set-key (kbd "C-c j") 'repeat-shell-command)
