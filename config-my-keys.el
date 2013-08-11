@@ -61,8 +61,8 @@
 (define-key my-keys-minor-mode-map (kbd "C-r") 'undo-tree-undo)
 (define-key my-keys-minor-mode-map (kbd "M-r") 'undo-tree-redo)
 
-(global-set-key (kbd "<M-up>") 'move-line-up)
-(global-set-key (kbd "<M-down>") 'move-line-down)
+(global-set-key (kbd "<M-up>") 'move-lines-up)
+(global-set-key (kbd "<M-down>") 'move-lines-down)
 
 (define-key my-keys-minor-mode-map (kbd "<C-tab>") '(lambda ()
                                    (interactive)
