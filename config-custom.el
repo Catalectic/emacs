@@ -6,6 +6,7 @@
  '(ac-quick-help-delay 1.0)
  '(ansi-color-names-vector
    ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#ad7fa8" "#8cc4ff" "#eeeeec"])
+ '(auto-indent-on-save-file t)
  '(custom-enabled-themes (quote (solarized-dark)))
  '(custom-safe-themes
    (quote

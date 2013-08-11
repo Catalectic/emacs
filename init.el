@@ -22,10 +22,14 @@
 (add-hook 'session-after-jump-to-last-change-hook
           'le::maybe-reveal)
 
+(eval-after-load "ace-jump-mode"
+  '(ace-jump-mode-enable-mark-sync))
+
 (require 'move-lines)
 (require 'chm-view)
 (require 'elscreen)
 (elscreen-start)
+(auto-indent-global-mode)
 
 (require 'config-my-functions)
 (require 'config-completion)
@@ -45,5 +49,4 @@
 
 ; Hack for obsolete macro in Rails
 (remprop 'flet 'byte-obsolete-info)
-
 (put 'erase-buffer 'disabled nil)

@@ -14,12 +14,12 @@
 ; Uncouple C-i and TAB
 (define-key input-decode-map (kbd "C-i") (kbd "H-C-i"))
 
-(define-key my-keys-minor-mode-map (kbd "M-i") '(lambda () 
-  (interactive) (kill-visual-line 0)))
+(define-key my-keys-minor-mode-map (kbd "M-i") '
+(lambda () (interactive) 
+  (kill-visual-line 0)))
 (define-key my-keys-minor-mode-map (kbd "M-l") 'forward-word)
 (define-key my-keys-minor-mode-map (kbd "M-j") 'backward-word)
 (define-key my-keys-minor-mode-map (kbd "M-k") 'kill-visual-line)
-(define-key my-keys-minor-mode-map (kbd "M-o") '(lambda () (interactive) (other-window -1)))
 (define-key my-keys-minor-mode-map (kbd "M-p") 'smart-symbol-go-backward)
 (define-key my-keys-minor-mode-map (kbd "M-n") 'smart-symbol-go-forward)
 (define-key my-keys-minor-mode-map (kbd "M-f") 'backward-sexp)
@@ -29,9 +29,18 @@
 (define-key my-keys-minor-mode-map (kbd "M-x") 'helm-M-x)
 (define-key my-keys-minor-mode-map (kbd "M-o") 'session-jump-to-last-change)
 
+(define-key my-keys-minor-mode-map (kbd "M-z") 'fastnav-zap-up-to-char-forward)
+(define-key my-keys-minor-mode-map (kbd "M-Z") 'fastnav-zap-up-to-char-backward)
+(define-key my-keys-minor-mode-map (kbd "M-m") 'fastnav-mark-to-char-forward)
+(define-key my-keys-minor-mode-map (kbd "M-M") 'fastnav-mark-to-char-backward)
+
 (define-key my-keys-minor-mode-map (kbd "M-C-s") 'kill-sentence) 
 (define-key my-keys-minor-mode-map (kbd "M-C-r") 'kill-word) 
 
+(define-key my-keys-minor-mode-map (kbd "C-a")   
+  '(lambda () (interactive) 
+     (beginning-of-line)
+      (back-to-indentation)))
 (define-key my-keys-minor-mode-map (kbd "C-f") 'ido-find-file)
 (define-key my-keys-minor-mode-map (kbd "C-v") ' scroll-up-command)
 (define-key my-keys-minor-mode-map (kbd "C-b") 'scroll-down-command)
@@ -45,7 +54,9 @@
 (define-key my-keys-minor-mode-map (kbd "C-o") 'session-jump-to-last-change)
 (define-key my-keys-minor-mode-map (kbd "C-;") 'recenter-top-bottom)
 (define-key my-keys-minor-mode-map (kbd "C-\'") 'flyspell-auto-correct-previous-word)
+(define-key my-keys-minor-mode-map (kbd "RET") 'newline-and-indent)
 
+(global-set-key (kbd "C-c j") 'repeat-shell-command)
 (define-key my-keys-minor-mode-map (kbd "C-x b") 'helm-mini) 
 (define-key my-keys-minor-mode-map (kbd "C-x C-f") 'helm-find-files) 
 (define-key my-keys-minor-mode-map (kbd "C-x m") 'browse-url-at-point)
@@ -61,22 +72,33 @@
 (define-key my-keys-minor-mode-map (kbd "C-r") 'undo-tree-undo)
 (define-key my-keys-minor-mode-map (kbd "M-r") 'undo-tree-redo)
 
-(global-set-key (kbd "<M-up>") 'move-lines-up)
-(global-set-key (kbd "<M-down>") 'move-lines-down)
+(define-key my-keys-minor-mode-map (kbd "<M-up>") 'move-lines-up)
+(define-key my-keys-minor-mode-map (kbd "<M-down>") 'move-lines-down)
 
-(define-key my-keys-minor-mode-map (kbd "<C-tab>") '(lambda ()
-                                   (interactive)
-                                   (call-interactively (key-binding (kbd "M-TAB")))))
+(define-key my-keys-minor-mode-map (kbd "<C-tab>") 
+  '(lambda () (interactive)
+     (call-interactively (key-binding (kbd "M-TAB")))))
 
-(define-key my-keys-minor-mode-map (kbd "<backtab>") '(lambda ()
-                                   (interactive)
-                                   (call-interactively (key-binding (kbd "M-TAB")))))
+(define-key my-keys-minor-mode-map (kbd "<backtab>") 
+'(lambda () (interactive)
+   (call-interactively (key-binding (kbd "M-TAB")))))
 
+(define-key ruby-mode-map (kbd "<f10>") 
+  '(lambda () (interactive)
+     (ruby-load-file (buffer-name))))
 (define-key my-keys-minor-mode-map (kbd "<f11>") 'magit-status)
 (define-key my-keys-minor-mode-map (kbd "<f6>") 'elscreen-toggle)
-
 (define-key my-keys-minor-mode-map (kbd "<f12>") 'save-buffer)
 
 (define-key my-keys-minor-mode-map (kbd "H-3") 'my-split-window) 
 
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
+(define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
+
+(define-key prog-mode-map (kbd "M-a") 'beginning-of-defun)
+(define-key prog-mode-map (kbd "M-e") 'end-of-defun)
+
 (provide 'config-my-keys)
+
+
