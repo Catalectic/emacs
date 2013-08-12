@@ -23,6 +23,11 @@
   (interactive)
   (dotimes (i 10) (ac-previous)))
 
+
+(eval-after-load "ace-jump-mode"
+  '(ace-jump-mode-enable-mark-sync))
+
+(require 'helm)
 (require 'yasnippet)
 (require 'helm-c-yasnippet)
 (setq helm-c-yas-space-match-any-greedy t)

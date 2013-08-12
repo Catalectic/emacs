@@ -1,14 +1,16 @@
+(add-hook 'after-init-hook 'save-installed-packages-list)
+
 (defun my-forward-to-indentation (n)
   "Move forward ARG lines and position at first nonblank character, skipping blank lines."
   (interactive "p")
   (forward-to-indentation (if (null n) 1 n))
-  (while (and (eolp) (not (eobp))) 
+  (while (and (eolp) (not (eobp)))
     (forward-to-indentation 1)))
 
 (defun my-backward-to-indentation (n)
   "Move backward ARG lines and position at first nonblank character, skipping blank lines."
   (interactive "p")
-  (while (and (eolp) (not (bobp))) 
+  (while (and (eolp) (not (bobp)))
     (backward-to-indentation (if (null n) 1 n))
     (backward-to-indentation 1)))
 
@@ -35,9 +37,11 @@
     (split-window-right))
   (balance-windows))
 
+(add-hook 'before-save-hook 'whitespace-cleanup)
+
 (defvar installed-packages-list "~/.emacs.d/packages.txt")
 
-(defun save-installed-packages-list () 
+(defun save-installed-packages-list ()
   (with-temp-file installed-packages-list
     (if (file-exists-p installed-packages-list)
         (progn (erase-buffer)
@@ -50,12 +54,10 @@
                       (mapc
                        (lambda (package)
                          (or (package-installed-p package)
-                             (if (y-or-n-p (format "Package %s is missing. Install it? " package)) 
+                             (if (y-or-n-p (format "Package %s is missing. Install it? " package))
                                  (package-install package))))
                        packages))))
 
- (add-hook 'after-init-hook 'save-installed-packages-list)
- 
 (load-installed-packages-list)
 
 (provide 'config-my-functions)

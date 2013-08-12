@@ -31,8 +31,8 @@
 
 (define-key my-keys-minor-mode-map (kbd "M-z") 'fastnav-zap-up-to-char-forward)
 (define-key my-keys-minor-mode-map (kbd "M-Z") 'fastnav-zap-up-to-char-backward)
-(define-key my-keys-minor-mode-map (kbd "M-m") 'fastnav-mark-to-char-forward)
 (define-key my-keys-minor-mode-map (kbd "M-m") 'helm-imenu)
+(define-key my-keys-minor-mode-map (kbd "M-/") 'ac-complete-imenu)
 
 (define-key my-keys-minor-mode-map (kbd "M-C-s") 'kill-sentence)
 (define-key my-keys-minor-mode-map (kbd "M-C-r") 'kill-word)
@@ -54,27 +54,28 @@
 (define-key my-keys-minor-mode-map (kbd "C-o") 'ace-jump-mode)
 (define-key my-keys-minor-mode-map (kbd "C-;") 'recenter-top-bottom)
 (define-key my-keys-minor-mode-map (kbd "C-\'") 'flyspell-auto-correct-previous-word)
+(define-key my-keys-minor-mode-map (kbd "C--") 'er/contract-region)
 (define-key my-keys-minor-mode-map (kbd "C-=") 'er/expand-region)
 (define-key my-keys-minor-mode-map (kbd "C-.") 'isearch-forward-symbol-at-point)
 
 (define-key my-keys-minor-mode-map (kbd "C-c j") 'repeat-shell-command)
-(define-key my-keys-minor-mode-map (kbd "C-x b") 'helm-mini)
+(define-key my-keys-minor-mode-map (kbd "C-x b") 'helm-projectile)
 (define-key my-keys-minor-mode-map (kbd "C-x C-f") 'helm-find-files)
 (define-key my-keys-minor-mode-map (kbd "C-x m") 'browse-url-at-point)
 (define-key my-keys-minor-mode-map (kbd "C-x f") 'find-file-in-repository)
 
 (define-key my-keys-minor-mode-map (kbd "C-h r") 'yari-helm)
-(define-key my-keys-minor-mode-map (kbd "C-h f") 'describe-function)
-(define-key my-keys-minor-mode-map (kbd "C-h v") 'describe-variable)
 (define-key my-keys-minor-mode-map (kbd "C-h C-f") 'find-function)
 (define-key my-keys-minor-mode-map (kbd "C-h C-v") 'find-variable)
 (define-key my-keys-minor-mode-map (kbd "C-h a") 'helm-apropos)
+(define-key my-keys-minor-mode-map (kbd "C-h y") 'helm-c-yas-complete)
 
 (define-key my-keys-minor-mode-map (kbd "C-r") 'undo-tree-undo)
 (define-key my-keys-minor-mode-map (kbd "M-r") 'undo-tree-redo)
-
 (define-key my-keys-minor-mode-map (kbd "<M-up>") 'move-lines-up)
 (define-key my-keys-minor-mode-map (kbd "<M-down>") 'move-lines-down)
+(define-key my-keys-minor-mode-map (kbd "C-c SPC") 'ace-jump-mode)
+(define-key my-keys-minor-mode-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
 
 (define-key my-keys-minor-mode-map (kbd "<C-tab>")
   '(lambda () (interactive)
@@ -93,9 +94,11 @@
 
 (define-key my-keys-minor-mode-map (kbd "H-3") 'my-split-window)
 
-(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+(define-key ido-file-completion-map (kbd "C-l") 'ido-delete-backward-updir)
 
-(define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
+(define-key helm-map (kbd "TAB") 'helm-execute-persistent-action)
+(define-key helm-map (kbd "`") 'helm-select-action)
+(define-key helm-map (kbd "C-f") 'helm-select-action)
 
 (provide 'config-my-keys)
 
