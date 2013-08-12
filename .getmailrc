@@ -1,0 +1,13 @@
+[retriever]
+type = SimplePOP3SSLRetriever
+server = ##
+username = ##@.com
+password = ##
+
+[destination]
+type = Maildir
+path = ~/Maildir/
+
+[options]
+
+delete_after = 14

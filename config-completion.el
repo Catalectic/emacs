@@ -6,15 +6,14 @@
                            ac-source-words-in-same-mode-buffers
                            ac-source-dictionary))
 (setq ac-use-quick-help t)
-(ac-flyspell-workaround)
 
-(global-set-key (kbd "M-/") 'ac-complete-imenu)
+(ac-flyspell-workaround)
 (define-key ac-complete-mode-map "\t" 'ac-complete)
 (define-key ac-complete-mode-map "\r" nil)
 (define-key ac-complete-mode-map "\C-n" 'ac-next)
 (define-key ac-complete-mode-map "\C-p" 'ac-previous)
-(define-key ac-complete-mode-map "\C-f" 'ac-next-page)
-(define-key ac-complete-mode-map "\C-b" 'ac-previous-page)
+(define-key ac-complete-mode-map "\C-b" 'ac-next-page)
+(define-key ac-complete-mode-map "\C-v" 'ac-previous-page)
 
 (defun ac-next-page ()
   (interactive)
