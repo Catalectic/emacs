@@ -59,16 +59,18 @@
 (define-key my-keys-minor-mode-map (kbd "C-.") 'isearch-forward-symbol-at-point)
 
 (define-key my-keys-minor-mode-map (kbd "C-c j") 'repeat-shell-command)
-(define-key my-keys-minor-mode-map (kbd "C-x b") 'helm-projectile)
-(define-key my-keys-minor-mode-map (kbd "C-x C-f") 'helm-find-files)
+(define-key my-keys-minor-mode-map (kbd "C-x b") 'helm-mini)
+(define-key my-keys-minor-mode-map (kbd "C-x C-b") 'helm-projectile)
+(define-key my-keys-minor-mode-map (kbd "C-x f") 'helm-find-files)
 (define-key my-keys-minor-mode-map (kbd "C-x m") 'browse-url-at-point)
-(define-key my-keys-minor-mode-map (kbd "C-x f") 'find-file-in-repository)
+(define-key my-keys-minor-mode-map (kbd "C-x C-f") 'find-file-in-repository)
 
 (define-key my-keys-minor-mode-map (kbd "C-h r") 'yari-helm)
 (define-key my-keys-minor-mode-map (kbd "C-h C-f") 'find-function)
 (define-key my-keys-minor-mode-map (kbd "C-h C-v") 'find-variable)
 (define-key my-keys-minor-mode-map (kbd "C-h a") 'helm-apropos)
 (define-key my-keys-minor-mode-map (kbd "C-h y") 'helm-c-yas-complete)
+(define-key my-keys-minor-mode-map (kbd "C-h n") 'helm-descbinds)
 
 (define-key my-keys-minor-mode-map (kbd "C-r") 'undo-tree-undo)
 (define-key my-keys-minor-mode-map (kbd "M-r") 'undo-tree-redo)
