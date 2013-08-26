@@ -4,7 +4,7 @@
     (other-window 1)
     (w3m-browse-url url newwin)))
 
- (setq browse-url-browser-function '
+ (setq browse-url-browser-function 'choose-browser
        browse-url-new-window-flag t
        browse-url-generic-program "~/firefox/firefox"
           w3m-new-session-in-background t)
