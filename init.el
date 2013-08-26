@@ -8,6 +8,7 @@
         ("Tromey" . "http://tromey.com/elpa/")))
 (package-initialize)
 
+(require 'projectile)
 (require 'move-lines)
 (require 'chm-view)
 (require 'elscreen)
@@ -17,6 +18,7 @@
 (require 'config-completion)
 (require 'config-prog)
 (require 'config-ruby)
+(require 'config-mail)
 (require 'config-w3m)
 (require 'config-erc)
 (require 'config-my-keys)

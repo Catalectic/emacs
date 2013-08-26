@@ -1,25 +1,26 @@
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/mu4e")
 (require 'mu4e)
+(require 'smtpmail)
 
-(setq user-mail-address "evening_star@gmx.com"
-      smtpmail-default-smtp-server "smtp.gmx.com"
-      smtpmail-smtp-server "smtp.gmx.com"
-      smtpmail-stream-type 'starttls
-      smtpmail-smtp-service 25
+(setq smtpmail-stream-type 'starttls
+      smtpmail-smtp-service 587
       mu4e-update-interval 300
-      mu4e-maildir "~/Maildir")
+      mu4e-maildir "~/Maildir"
+      message-send-mail-function 'smtpmail-send-it
+      smtpmail-queue-mail  nil
+      smtpmail-queue-dir  "/home/user/Maildir/queue/cur"
+      message-kill-buffer-on-exit t)
 
-(setq my-mu4e-account-alist
-  '(("Star"
-     (mu4e-sent-folder "/Star/Saved Items")
-     (mu4e-drafts-folder "/Star/Drafts")
-     (user-mail-address "evening_star@gmx.com")
-     (smtpmail-smtp-user "evening_star@gmx.com"))
-    ("Me"
-     (mu4e-sent-folder "/Me/Saved Items")
-     (mu4e-drafts-folder "/Me/Drafts")
-     (user-mail-address "daphne.johnson@gmx.com")
-     (smtpmail-smtp-user "daphne.johnson@gmx.com"))))
+;; Skeleton
+;; (setq my-mu4e-account-alist
+;;       '(("Star"
+;;          (smtpmail-smtp-server "")
+;;          (mu4e-sent-folder "//Saved Items")
+;;          (mu4e-drafts-folder "//Drafts")
+;;          (user-mail-address "")
+;;          (smtpmail-smtp-user ""))
+;;         ("Me"
+;;          (smtpmail-smtp-server ""))))
 
 (setq mu4e-get-mail-command "getmail -r ~/.getmail/getmailrc2 -r ~/.getmail/getmailrc")
 
@@ -42,6 +43,7 @@
          (if account-vars
              (mapc #'(lambda (var)
                        (set (car var) (cadr var)))
+
                    account-vars)
            (error "No email account found"))))
 
