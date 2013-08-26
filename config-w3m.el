@@ -4,10 +4,18 @@
     (other-window 1)
     (w3m-browse-url url newwin)))
 
- (setq browse-url-browser-function 'w3m-browse-url-other-window
-          browse-url-new-window-flag t
+ (setq browse-url-browser-function '
+       browse-url-new-window-flag t
+       browse-url-generic-program "~/firefox/firefox"
           w3m-new-session-in-background t)
- (autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
+
+(defun choose-browser (url &rest args)
+  (interactive "sURL: ")
+  (if (y-or-n-p "Use external browser? ")
+      (browse-url-generic url)
+    (w3m-browse-url-other-window url)))
+
+(setq browse-url-browser-function 'choose-browser)
 
 (add-hook 'w3m-mode-hook 'w3m-mode-bindings)
 
