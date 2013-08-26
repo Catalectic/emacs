@@ -1,7 +1,6 @@
 ; Clean-up starter-kit hooks
 (remove-hook 'prog-mode-hook 'whitespace-mode)
 (remove-hook 'prog-mode-hook 'idle-highlight-mode)
-(remove-hook 'prog-mode-hook 'hl-line-mode)
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 ; Keybindings
