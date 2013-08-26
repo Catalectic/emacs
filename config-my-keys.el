@@ -11,11 +11,11 @@
 
 (add-hook 'minibuffer-setup-hook 'my-minibuffer-setup-hook)
 
-; Uncouple C-i and TAB
+;; Uncouple C-i and TAB
 (define-key input-decode-map (kbd "C-i") (kbd "H-C-i"))
 
-(define-key my-keys-minor-mode-map (kbd "M-i") '
-  (lambda () (interactive)
+(define-key my-keys-minor-mode-map (kbd "M-i")
+  ' (lambda () (interactive)
     (kill-visual-line 0)))
 (define-key my-keys-minor-mode-map (kbd "M-l") 'kill-word)
 (define-key my-keys-minor-mode-map (kbd "M-j") 'backward-kill-word)
@@ -28,6 +28,12 @@
 (define-key my-keys-minor-mode-map (kbd "M-v") 'query-replace-regexp)
 (define-key my-keys-minor-mode-map (kbd "M-x") 'helm-M-x)
 (define-key my-keys-minor-mode-map (kbd "M-o") 'session-jump-to-last-change)
+(define-key my-keys-minor-mode-map (kbd "M-q")
+  '(lambda () (interactive)
+     (save-excursion
+       (indent-region (point-min) (point-max) nil))))
+(define-key my-keys-minor-mode-map (kbd "M-C-q") 'fill-paragraph)
+
 
 (define-key my-keys-minor-mode-map (kbd "M-z") 'fastnav-zap-up-to-char-forward)
 (define-key my-keys-minor-mode-map (kbd "M-Z") 'fastnav-zap-up-to-char-backward)
@@ -40,8 +46,8 @@
 (define-key my-keys-minor-mode-map (kbd "C-a")
   '(lambda () (interactive)
      (beginning-of-line)
-      (back-to-indentation)))
-(define-key my-keys-minor-mode-map (kbd "C-f") 'ido-find-file)
+     (back-to-indentation)))
+(define-key my-keys-minor-mode-map (kbd "C-f") 'find-file-in-repository)
 (define-key my-keys-minor-mode-map (kbd "C-v") ' scroll-up-command)
 (define-key my-keys-minor-mode-map (kbd "C-b") 'scroll-down-command)
 (define-key my-keys-minor-mode-map (kbd "C-t") 'ido-switch-buffer)
@@ -63,7 +69,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-x C-b") 'helm-projectile)
 (define-key my-keys-minor-mode-map (kbd "C-x f") 'helm-find-files)
 (define-key my-keys-minor-mode-map (kbd "C-x m") 'browse-url-at-point)
-(define-key my-keys-minor-mode-map (kbd "C-x C-f") 'find-file-in-repository)
+(define-key my-keys-minor-mode-map (kbd "C-x C-f") 'projectile-find-file)
 
 (define-key my-keys-minor-mode-map (kbd "C-h r") 'yari-helm)
 (define-key my-keys-minor-mode-map (kbd "C-h C-f") 'find-function)
@@ -84,14 +90,14 @@
      (call-interactively (key-binding (kbd "M-TAB")))))
 
 (define-key my-keys-minor-mode-map (kbd "<backtab>")
-'(lambda () (interactive)
-   (call-interactively (key-binding (kbd "M-TAB")))))
+  '(lambda () (interactive)
+     (call-interactively (key-binding (kbd "M-TAB")))))
 
 (define-key ruby-mode-map (kbd "<f10>")
   '(lambda () (interactive)
      (ruby-load-file (buffer-name))))
 (define-key my-keys-minor-mode-map (kbd "<f11>") 'magit-status)
-(define-key my-keys-minor-mode-map (kbd "<f6>") 'elscreen-toggle)
+(define-key my-keys-minor-mode-map (kbd "<f6>") 'god-local-mode)
 (define-key my-keys-minor-mode-map (kbd "<f12>") 'save-buffer)
 
 (define-key my-keys-minor-mode-map (kbd "H-3") 'my-split-window)
