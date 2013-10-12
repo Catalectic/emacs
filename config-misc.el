@@ -22,8 +22,6 @@
 (setq auto-indent-key-for-end-of-line-then-newline "<M-RET>"
       auto-indent-key-for-end-of-line-insert-char-then-newline "<M-S-return>")
 
-(keyfreq-mode 1)
-(keyfreq-autosave-mode 1)
 (ido-mode 1)
 (ido-everywhere 1)
 (flx-ido-mode 1)

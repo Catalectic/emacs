@@ -47,7 +47,7 @@
   '(lambda () (interactive)
      (beginning-of-line)
      (back-to-indentation)))
-(define-key my-keys-minor-mode-map (kbd "C-f") 'find-file-in-repository)
+(define-key my-keys-minor-mode-map (kbd "C-f") 'ido-find-file)
 (define-key my-keys-minor-mode-map (kbd "C-v") ' scroll-up-command)
 (define-key my-keys-minor-mode-map (kbd "C-b") 'scroll-down-command)
 (define-key my-keys-minor-mode-map (kbd "C-t") 'ido-switch-buffer)

@@ -1,7 +1,7 @@
 ; Obsolete function, some package hasn't redefined it
 (defun inf-ruby-keys () (inf-ruby-setup-keybindings))
 
-(add-to-list 'load-path "/home/user/.emacs.d/emacs-rails/")
+(add-to-list 'load-path "~/.emacs.d/emacs-rails/")
 
 (require 'starter-kit-ruby)
 (require 'ruby-electric)
