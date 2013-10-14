@@ -4,15 +4,12 @@
 (add-to-list 'load-path "~/.emacs.d/emacs-rails/")
 
 (require 'starter-kit-ruby)
-(require 'ruby-electric)
 (require 'robe)
 (require 'rails)
 (require 'rspec-mode)
 (require 'smartparens-ruby)
 
 (rvm-use "2.0.0" "global")
-
-(add-hook 'ruby-mode-hook 'ruby-electric-mode)
 (add-hook 'ruby-mode-hook 'rails-minor-mode)
 (add-hook 'ruby-mode-hook 'robe-mode)
 
