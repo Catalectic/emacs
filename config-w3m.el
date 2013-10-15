@@ -6,7 +6,7 @@
 
  (setq browse-url-browser-function 'choose-browser
        browse-url-new-window-flag t
-       browse-url-generic-program "~/firefox/firefox"
+       browse-url-generic-program "launchy"
           w3m-new-session-in-background t)
 
 (defun choose-browser (url &rest args)

@@ -1,7 +1,7 @@
 (require 'erc)
 (require 'erc-track)
 
-(erc-spelling-mode 1)
+;(erc-spelling-mode 1)
 (erc-track-mode 1)
 
 (define-key erc-mode-map (kbd "<up>") 'erc-previous-command)
@@ -9,7 +9,7 @@
 
 (eval-after-load "erc"
   '(progn
- 
+
      ;; Set personal information
      (setq erc-disable-ctcp-replies t
            erc-track-exclude-server-buffer t
