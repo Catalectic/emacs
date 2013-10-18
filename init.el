@@ -28,3 +28,5 @@
 (load custom-file)
 
 (load-file "~/.emacs.d/private.el")
+(setq auto-mode-alist (remove (rassoc 'rhtml-mode auto-mode-alist) auto-mode-alist))
+(setq auto-mode-alist (remove (rassoc 'rhtml-mode auto-mode-alist) auto-mode-alist))
