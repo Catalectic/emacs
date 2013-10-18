@@ -35,6 +35,12 @@
 (yas-reload-all)
 (yas-global-mode)
 
+
+
+(add-hook 'web-mode-hook
+          #'(lambda ()
+              (set (make-local-variable yas-extra-modes) '(html-mode))))
+
 ; Hack for performance in Helm, especially to switch buffers
 (defun helm-highlight-buffers (x y) nil)
 
