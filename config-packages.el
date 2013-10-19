@@ -7,6 +7,8 @@
                (insert (prin1-to-string package-activated-list))))))
 
 (defun load-installed-packages-list ()
+  (if (not package-archive-contents)
+      (package-refresh-contents))
   (with-temp-buffer installed-packages-list
                     (insert-file-contents installed-packages-list)
                     (let ((packages (read (buffer-string))))
