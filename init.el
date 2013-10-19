@@ -7,6 +7,7 @@
         ("melpa" . "http://melpa.milkbox.net/packages/")
         ("Tromey" . "http://tromey.com/elpa/")))
 (package-initialize)
+(require 'config-packages)
 
 (require 'projectile)
 (require 'move-lines)
