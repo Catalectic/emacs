@@ -19,6 +19,7 @@
  '(helm-ff-auto-update-initial-value nil)
  '(ido-ubiquitous-mode t)
  '(iswitchb-mode nil)
+ '(js-indent-level 2)
  '(kill-whole-line t)
  '(menu-bar-mode t)
  '(scroll-error-top-bottom t)
