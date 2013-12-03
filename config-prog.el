@@ -21,6 +21,8 @@
 
 ; Web-mode
 
+(setq rails-auto-mode-alist nil)
+
 (require 'web-mode)
 ; Hack to get syntax highlight to work automatically
 (add-hook 'web-mode-hook (lambda () (font-lock-mode 0)))

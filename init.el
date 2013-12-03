@@ -19,7 +19,7 @@
 (require 'config-completion)
 (require 'config-prog)
 (require 'config-ruby)
-;(require 'config-mail)
+(require 'config-mail)
 (require 'config-w3m)
 (require 'config-erc)
 (require 'config-my-keys)
@@ -28,6 +28,4 @@
 (setq custom-file "~/.emacs.d/config-custom.el")
 (load custom-file)
 
-(load-file "~/.emacs.d/private.el")
-(setq auto-mode-alist (remove (rassoc 'rhtml-mode auto-mode-alist) auto-mode-alist))
-(setq auto-mode-alist (remove (rassoc 'rhtml-mode auto-mode-alist) auto-mode-alist))
+(load-file "~/.emacs.d/config-private.el")
