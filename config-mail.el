@@ -22,7 +22,7 @@
 ;;         ("Me"
 ;;          (smtpmail-smtp-server ""))))
 
-(setq mu4e-get-mail-command "getmail -r ~/.getmail/getmailrc2 -r ~/.getmail/getmailrc")
+(setq mu4e-get-mail-command "getmail -r ~/.getmail/getmail2rc -r ~/.getmail/getmailrc -r ~/.getmail/getmail3rc")
 
 (add-hook 'mu4e-index-updated-hook
           (defun new-mail ()
@@ -50,3 +50,15 @@
 (add-hook 'mu4e-compose-pre-hook 'my-mu4e-set-account)
 
 (provide 'config-mail)
+
+
+
+
+
+
+
+
+
+
+
+
