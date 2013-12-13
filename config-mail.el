@@ -32,9 +32,7 @@
        "Set the account for composing a message."
        (let* ((account
                (if mu4e-compose-parent-message
-                   (let ((maildir (mu4e-message-field mu4e-compose-parent-message :maildir)))
-                     (string-match "/\\(.*?\\)/" maildir)
-                     (match-string 1 maildir))
+                   (substring (mu4e-message-field mu4e-compose-parent-message :maildir) 1)
                  (completing-read (format "Compose with account: (%s) "
                                           (mapconcat #'(lambda (var) (car var)) my-mu4e-account-alist "/"))
                                   (mapcar #'(lambda (var) (car var)) my-mu4e-account-alist)
