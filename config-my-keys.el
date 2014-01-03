@@ -26,7 +26,7 @@
 (define-key my-keys-minor-mode-map (kbd "M-b") 'backward-word)
 (define-key my-keys-minor-mode-map (kbd "M-u") 'eval-last-sexp)
 (define-key my-keys-minor-mode-map (kbd "M-v") 'query-replace-regexp)
-(define-key my-keys-minor-mode-map (kbd "M-x") 'smex)
+(define-key my-keys-minor-mode-map (kbd "M-x") 'helm-M-x)
 (define-key my-keys-minor-mode-map (kbd "M-o") 'session-jump-to-last-change)
 (define-key my-keys-minor-mode-map (kbd "M-q")
   '(lambda () (interactive)

@@ -19,7 +19,7 @@
 (require 'config-completion)
 (require 'config-prog)
 (require 'config-ruby)
-(require 'config-mail)
+;(require 'config-mail)
 (require 'config-w3m)
 (require 'config-erc)
 (require 'config-my-keys)
