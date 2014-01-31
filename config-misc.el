@@ -11,7 +11,6 @@
       version-control t)
 
 (global-undo-tree-mode)
-(auto-indent-global-mode)
 
  ; Hack for obsolete macro in Rails
 (remprop 'flet 'byte-obsolete-info)
