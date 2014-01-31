@@ -21,6 +21,8 @@
           (lambda ()
             (add-to-list 'ac-sources 'ac-source-robe)))
 
+(setq ruby-insert-encoding-magic-comment nil)
+
 (define-key inf-ruby-mode-map (kbd "<up>") 'comint-previous-input)
 (define-key inf-ruby-mode-map (kbd "<down>") 'comint-next-input)
 
