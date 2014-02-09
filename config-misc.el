@@ -21,7 +21,19 @@
 
 (winner-mode 1)
 
+(setq undo-tree-mode-lighter "")
 (global-undo-tree-mode)
+
+(defadvice undo-tree-undo (around keep-region activate)
+  (if (use-region-p)
+      (let ((m (set-marker (make-marker) (mark)))
+            (p (set-marker (make-marker) (point))))
+        ad-do-it
+        (goto-char p)
+        (set-mark m)
+        (set-marker p nil)
+        (set-marker m nil))
+    ad-do-it))
 
 (global-subword-mode 1)
 

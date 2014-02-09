@@ -79,7 +79,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-h n") 'helm-descbinds)
 
 (define-key my-keys-minor-mode-map (kbd "C-r") 'undo-tree-undo)
-(define-key my-keys-minor-mode-map (kbd "M-r") 'undo-tree-redo)
+(define-key my-keys-minor-mode-map (kbd "M-r") 'undo-tree-visualize)
 (define-key my-keys-minor-mode-map (kbd "<M-up>") 'move-lines-up)
 (define-key my-keys-minor-mode-map (kbd "<M-down>") 'move-lines-down)
 (define-key my-keys-minor-mode-map (kbd "C-c SPC") 'ace-jump-mode)
