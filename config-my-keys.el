@@ -108,6 +108,8 @@
 (define-key helm-map (kbd "`") 'helm-select-action)
 (define-key helm-map (kbd "C-f") 'helm-select-action)
 
+(define-key ruby-mode-map (kbd "C-c H-TAB") 'ruby-dev-start-repl)
+
 (provide 'config-my-keys)
 
 
