@@ -13,6 +13,9 @@
 (defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
   (rvm-activate-corresponding-ruby))
 
+(setq rspec-key-command-prefix "."
+      rspec-use-rake-when-possible nil)
+
 (add-hook 'ruby-mode-hook 'rails-minor-mode)
 (add-hook 'ruby-mode-hook 'robe-mode)
 
