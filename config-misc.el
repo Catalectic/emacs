@@ -1,4 +1,7 @@
 (setq next-line-add-newlines t)
+(setq echo-keystrokes 0.1)
+
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory))
@@ -10,7 +13,17 @@
       kept-old-versions 2
       version-control t)
 
+(recentf-mode 1)
+(setq recentf-max-saved-items 100)
+
+(savehist-mode 1)
+(setq history-length 1000)
+
+(winner-mode 1)
+
 (global-undo-tree-mode)
+
+(global-subword-mode 1)
 
  ; Hack for obsolete macro in Rails
 (remprop 'flet 'byte-obsolete-info)
@@ -44,5 +57,7 @@
 
 (add-hook 'session-after-jump-to-last-change-hook
           'le::maybe-reveal)
+
+(setq gc-cons-threshold 20000000)
 
 (provide 'config-misc)
