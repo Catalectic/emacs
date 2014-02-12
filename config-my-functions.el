@@ -52,8 +52,6 @@
      (list (line-beginning-position)
            (line-beginning-position 2)))))
 
-(add-hook 'before-save-hook 'whitespace-cleanup)
-
 (recentf-mode)
 (run-with-timer 0 1800 'recentf-save-list)
 
