@@ -85,6 +85,15 @@
 (define-key my-keys-minor-mode-map (kbd "C-c SPC") 'ace-jump-mode)
 (define-key my-keys-minor-mode-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
 
+(define-key my-keys-minor-mode-map (kbd "C-c d")
+  '(lambda () (interactive)
+     (set-window-dedicated-p (selected-window) 1)
+     (message "Active window is now sticky")))
+
+(define-key my-keys-minor-mode-map (kbd "C-c s") 'rspec-verify-single)
+(define-key my-keys-minor-mode-map (kbd "C-c b") 'rspec-verify)
+(define-key my-keys-minor-mode-map (kbd "C-c p") 'projectile-ag)
+
 (define-key my-keys-minor-mode-map (kbd "<C-tab>")
   '(lambda () (interactive)
      (call-interactively (key-binding (kbd "M-TAB")))))
