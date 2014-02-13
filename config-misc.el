@@ -35,19 +35,9 @@
         (set-marker m nil))
     ad-do-it))
 
-(defun revert-buffer-keep-undo (&rest -)
-  "Revert buffer but keep undo history."
-  (interactive)
-  (let ((inhibit-read-only t))
-    (erase-buffer)
-    (insert-file-contents (buffer-file-name))
-    (set-visited-file-modtime (visited-file-modtime))
-    (set-buffer-modified-p nil)))
-
-(setq revert-buffer-function 'revert-buffer-keep-undo)
-
+(add-hook 'before-revert-hook  (lambda () (kill-ring-save (point-min) (point-max))))
+(setq revert-buffer-function nil)
 (setq kill-ring-max 1000)
-
 (setq global-auto-revert-mode t)
 
 (global-subword-mode 1)
