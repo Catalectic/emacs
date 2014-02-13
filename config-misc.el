@@ -13,13 +13,17 @@
       kept-old-versions 2
       version-control t)
 
+(setq sml/theme 'dark)
+(sml/setup)
+
 (recentf-mode 1)
 (setq recentf-max-saved-items 100)
 
 (savehist-mode 1)
 (setq history-length 1000)
 
-(winner-mode 1)
+  (setq wg-morph-on nil) ;; switch off animation of restoring window configuration
+  (add-hook 'after-init-hook #'(lambda () (persp-mode 1)))
 
 (setq undo-tree-mode-lighter "")
 (global-undo-tree-mode)
