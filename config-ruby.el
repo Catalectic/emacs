@@ -5,7 +5,6 @@
 
 (require 'starter-kit-ruby)
 (require 'robe)
-(require 'rails)
 (require 'rspec-mode)
 (require 'smartparens-ruby)
 
@@ -15,7 +14,8 @@
 (setq rspec-key-command-prefix "."
       rspec-use-rake-when-possible nil)
 
-(add-hook 'ruby-mode-hook 'rails-minor-mode)
+(projectile-global-mode)
+(add-hook 'projectile-mode-hook 'projectile-rails-on)
 (add-hook 'ruby-mode-hook 'robe-mode)
 
 (add-hook 'ruby-mode-hook
