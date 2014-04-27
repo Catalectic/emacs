@@ -3,15 +3,21 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-(setq backup-directory-alist
-      `((".*" . ,temporary-file-directory))
-      auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t))
-      backup-by-copying t
-      delete-old-versions t
-      kept-new-versions 6
-      kept-old-versions 2
-      version-control t)
+(setq make-backup-files nil
+      auto-save-default nil)
+
+(defadvice switch-to-buffer (before save-buffer-now activate)
+  (when buffer-file-name (save-buffer)))
+(defadvice other-window (before other-window-now activate)
+  (when buffer-file-name (save-buffer)))
+(defadvice windmove-up (before other-window-now activate)
+  (when buffer-file-name (save-buffer)))
+(defadvice windmove-down (before other-window-now activate)
+  (when buffer-file-name (save-buffer)))
+(defadvice windmove-left (before other-window-now activate)
+  (when buffer-file-name (save-buffer)))
+(defadvice windmove-right (before other-window-now activate)
+  (when buffer-file-name (save-buffer)))
 
 (setq sml/theme 'dark)
 (sml/setup)
@@ -21,9 +27,6 @@
 
 (savehist-mode 1)
 (setq history-length 1000)
-
-  (setq wg-morph-on nil) ;; switch off animation of restoring window configuration
-  (add-hook 'after-init-hook #'(lambda () (persp-mode 1)))
 
 (setq undo-tree-mode-lighter "")
 (global-undo-tree-mode)
@@ -64,6 +67,8 @@
 (setq gc-cons-threshold 20000000)
 
 (setq twittering-auth-method 'xauth)
+
+(setq-default auto-fill-function nil)
 
 (require 'session)
 (session-initialize)
