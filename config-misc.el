@@ -45,7 +45,7 @@
 (add-hook 'before-revert-hook  (lambda () (kill-ring-save (point-min) (point-max))))
 (setq revert-buffer-function nil)
 (setq kill-ring-max 1000)
-(setq global-auto-revert-mode t)
+(global-auto-revert-mode t)
 
 (global-subword-mode 1)
 
