@@ -86,6 +86,11 @@
 
 (setq gc-cons-threshold 20000000)
 
+(define-minor-mode sticky-buffer-mode
+  "Make the current window always display this buffer."
+  nil " sticky" nil
+  (set-window-dedicated-p (selected-window) sticky-buffer-mode))
+
 (exec-path-from-shell-initialize)
 
 (provide 'config-misc)
