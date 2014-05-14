@@ -68,9 +68,9 @@
 
 (setq twittering-auth-method 'xauth)
 
-(setq-default auto-fill-function nil)
+(remove-hook 'prog-mode-hook 'esk-local-comment-auto-fill)
+(remove-hook 'text-mode-hook 'turn-on-auto-fill)
 
-(require 'session)
 (session-initialize)
 (defun le::maybe-reveal ()
   (when (and (or (memq major-mode  '(org-mode outline-mode))
