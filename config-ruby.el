@@ -11,6 +11,8 @@
 (defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
   (rvm-activate-corresponding-ruby))
 
+(setq ruby-use-smie nil)
+
 (setq rspec-key-command-prefix "."
       rspec-use-rake-when-possible nil)
 
