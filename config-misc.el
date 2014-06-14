@@ -71,7 +71,6 @@
 (remove-hook 'prog-mode-hook 'esk-local-comment-auto-fill)
 (remove-hook 'text-mode-hook 'turn-on-auto-fill)
 
-(session-initialize)
 (defun le::maybe-reveal ()
   (when (and (or (memq major-mode  '(org-mode outline-mode))
                  (and (boundp 'outline-minor-mode)
@@ -92,5 +91,8 @@
   (set-window-dedicated-p (selected-window) sticky-buffer-mode))
 
 (exec-path-from-shell-initialize)
+
+(require 'workgroups2)
+(workgroups-mode 1)
 
 (provide 'config-misc)
