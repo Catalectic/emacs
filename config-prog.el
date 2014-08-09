@@ -12,6 +12,7 @@
 (require 'smartparens-config)
 (smartparens-global-mode)
 (show-smartparens-global-mode)
+(show-paren-mode -1)
 (setq sp-ignore-modes-list '(minibuffer-inactive-mode erc-mode w3m-mode))
 
 (add-hook 'lisp-mode-hook

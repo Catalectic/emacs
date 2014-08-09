@@ -37,6 +37,22 @@
     (split-window-right))
   (balance-windows))
 
+(defun projectile-ag (search-term &optional arg)
+  "Run an ag search with SEARCH-TERM in the project.
+
+With an optional prefix argument prompt user for directory to search in."
+  (interactive
+   (list (read-from-minibuffer
+          (projectile-prepend-project-name "Ag search for: ")
+          (projectile-symbol-at-point))
+         current-prefix-arg))
+  (if (fboundp 'ag-regexp)
+    (let ((dir (if current-prefix-arg (ack-and-a-half-read-dir) (projectile-project-root)))
+      ;; reset the prefix arg, otherwise it will affect the ag-command
+          (current-prefix-arg nil))
+        (funcall 'ag search-term dir))
+    (error "Ag is not available")))
+
 (defadvice kill-ring-save (before slick-copy activate compile)
   "When called interactively with no active region, copy a single line instead."
   (interactive
