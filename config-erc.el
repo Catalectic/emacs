@@ -4,7 +4,7 @@
 ;(erc-spelling-mode 1)
 (erc-track-mode 1)
 
-(global-subword-mode nil) ; Breaks ERC in 24.4
+(add-hook 'erc-connect-pre-hook (lambda (null) (global-subword-mode -1))) ; Breaks ERC in 24.4
 
 (define-key erc-mode-map (kbd "<up>") 'erc-previous-command)
 (define-key erc-mode-map (kbd "<down>") 'erc-next-command)
@@ -21,6 +21,7 @@
            erc-lurker-threshold-time 84600
            erc-max-buffer-size 100000
            erc-nick-uniquifier "_"
+           erc-server-reconnect-attempts t
            erc-spelling-mode t
            erc-truncate-mode t
            erc-whowas-on-nosuchnick t)
