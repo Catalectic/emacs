@@ -95,4 +95,7 @@
 (require 'workgroups2)
 (workgroups-mode 1)
 
+(setq split-height-threshold 1200)
+(setq split-width-threshold 2000)
+
 (provide 'config-misc)

@@ -38,4 +38,7 @@
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" .web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
+(projectile-global-mode)
+(setq projectile-require-project-root nil)
+
 (provide 'config-prog)

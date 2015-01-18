@@ -16,9 +16,9 @@
 (setq rspec-key-command-prefix "."
       rspec-use-rake-when-possible nil)
 
-(projectile-global-mode)
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
 (add-hook 'ruby-mode-hook 'robe-mode)
+
 
 (add-hook 'ruby-mode-hook
           (lambda ()
@@ -38,3 +38,4 @@
 (define-key inf-ruby-mode-map (kbd "<down>") 'comint-next-input)
 
 (provide 'config-ruby)
+

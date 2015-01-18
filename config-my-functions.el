@@ -37,6 +37,13 @@
     (split-window-right))
   (balance-windows))
 
+(defun my-kill-buffer ()
+  (interactive)
+  (kill-buffer)
+  (projectile-project-buffers-other-buffer))
+
+
+
 (defun projectile-ag (search-term &optional arg)
   "Run an ag search with SEARCH-TERM in the project.
 
