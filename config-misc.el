@@ -69,8 +69,6 @@
 
 (setq gc-cons-threshold 20000000)
 
-(setq twittering-auth-method 'xauth)
-
 (remove-hook 'prog-mode-hook 'esk-local-comment-auto-fill)
 (remove-hook 'text-mode-hook 'turn-on-auto-fill)
 

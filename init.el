@@ -11,7 +11,6 @@
 
 (require 'projectile)
 (require 'move-lines)
-(require 'chm-view)
 (require 'elscreen)
 (elscreen-start)
 

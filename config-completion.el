@@ -36,7 +36,7 @@
 (require 'yasnippet)
 (require 'helm-c-yasnippet)
 (setq helm-c-yas-space-match-any-greedy t)
-(yas--initialize)
+
 (yas-reload-all)
 (yas-global-mode)
 
