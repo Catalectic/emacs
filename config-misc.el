@@ -55,6 +55,9 @@
 
 (setq debug-on-error t)
 
+(eval-after-load 'tramp
+  '(vagrant-tramp-enable))
+
 (setq auto-indent-key-for-end-of-line-then-newline "<M-RET>"
       auto-indent-key-for-end-of-line-insert-char-then-newline "<M-S-return>")
 
