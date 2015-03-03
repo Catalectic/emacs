@@ -24,7 +24,10 @@
 (require 'config-my-keys)
 (require 'config-misc)
 
+
 (setq custom-file "~/.emacs.d/config-custom.el")
 (load custom-file)
+(load-theme 'solarized-dark t)
 
 (load-file "~/.emacs.d/config-private.el")
+

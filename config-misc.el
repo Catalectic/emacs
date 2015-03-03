@@ -19,6 +19,7 @@
 (defadvice windmove-right (before other-window-now activate)
   (when buffer-file-name (save-buffer)))
 
+(setq sml/no-confirm-load-theme t)
 (setq sml/theme 'dark)
 (sml/setup)
 
