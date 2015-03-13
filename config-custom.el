@@ -10,6 +10,7 @@
  '(auto-indent-key-for-end-of-line-then-newline "<M-RET>" t)
  '(auto-indent-on-save-file nil)
  '(delete-selection-mode t)
+ '(enable-recursive-minibuffers nil)
  '(erc-server-reconnect-attempts t)
  '(font-use-system-font nil)
  '(global-auto-complete-mode t)
