@@ -66,8 +66,7 @@
 
 (define-key my-keys-minor-mode-map (kbd "C-c j") 'repeat-shell-command)
 (define-key my-keys-minor-mode-map (kbd "C-x b") 'helm-mini)
-(define-key my-keys-minor-mode-map (kbd "C-x C-b") 'helm-projectile)
-(define-key my-keys-minor-mode-map (kbd "C-x C-f") 'helm-find-files)
+(define-key my-keys-minor-mode-map (kbd "C-x C-f") 'helm-projectile)
 (define-key my-keys-minor-mode-map (kbd "C-x m") 'browse-url-at-point)
 (define-key my-keys-minor-mode-map (kbd "C-x k") 'my-kill-buffer)
 (define-key my-keys-minor-mode-map (kbd "C-x C-p") 'projectile-switch-project)

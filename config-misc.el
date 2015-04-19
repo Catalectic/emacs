@@ -100,4 +100,6 @@
 (setq split-height-threshold 1200)
 (setq split-width-threshold 2000)
 
+(menu-bar-mode 1)
+
 (provide 'config-misc)
