@@ -34,7 +34,7 @@
        (indent-region (point-min) (point-max) nil))))
 (define-key my-keys-minor-mode-map (kbd "M-C-q") 'fill-paragraph)
 
-
+(define-key my-keys-minor-mode-map (kbd "M-y") 'helm-show-kill-ring)
 (define-key my-keys-minor-mode-map (kbd "M-z") 'fastnav-zap-up-to-char-forward)
 (define-key my-keys-minor-mode-map (kbd "M-Z") 'fastnav-zap-up-to-char-backward)
 (define-key my-keys-minor-mode-map (kbd "M-m") 'helm-imenu)
@@ -47,7 +47,7 @@
   '(lambda () (interactive)
      (beginning-of-line)
      (back-to-indentation)))
-(define-key my-keys-minor-mode-map (kbd "C-f") 'ido-find-file)
+(define-key my-keys-minor-mode-map (kbd "C-f") 'projectile-find-file)
 (define-key my-keys-minor-mode-map (kbd "C-v") 'scroll-up-command)
 (define-key my-keys-minor-mode-map (kbd "C-b") 'scroll-down-command)
 (define-key my-keys-minor-mode-map (kbd "C-t") 'projectile-switch-to-buffer)
@@ -67,10 +67,9 @@
 (define-key my-keys-minor-mode-map (kbd "C-c j") 'repeat-shell-command)
 (define-key my-keys-minor-mode-map (kbd "C-x b") 'helm-mini)
 (define-key my-keys-minor-mode-map (kbd "C-x C-b") 'helm-projectile)
-(define-key my-keys-minor-mode-map (kbd "C-x f") 'helm-find-files)
+(define-key my-keys-minor-mode-map (kbd "C-x C-f") 'helm-find-files)
 (define-key my-keys-minor-mode-map (kbd "C-x m") 'browse-url-at-point)
 (define-key my-keys-minor-mode-map (kbd "C-x k") 'my-kill-buffer)
-(define-key my-keys-minor-mode-map (kbd "C-x C-f") 'projectile-find-file)
 (define-key my-keys-minor-mode-map (kbd "C-x C-p") 'projectile-switch-project)
 
 (define-key my-keys-minor-mode-map (kbd "<f1> r") 'yari-helm)
@@ -115,9 +114,9 @@
 
 (define-key ido-file-completion-map (kbd "C-l") 'ido-delete-backward-updir)
 
-(define-key helm-map (kbd "TAB") 'helm-execute-persistent-action)
-(define-key helm-map (kbd "`") 'helm-select-action)
-(define-key helm-map (kbd "C-f") 'helm-select-action)
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to do persistent action
+(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)  ; make TAB works in terminal
+(define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
 
 (define-key ruby-mode-map (kbd "C-c H-TAB") 'ruby-dev-start-repl)
 
