@@ -28,10 +28,6 @@
 (eval-after-load "ace-jump-mode"
   '(ace-jump-mode-enable-mark-sync))
 
-(require 'ack-and-a-half)
-(setq ack-and-a-half-executable "/usr/local/bin/ack"
-      ack-and-a-half-prompt-for-directory t)
-
 (require 'helm)
 (require 'yasnippet)
 (require 'helm-c-yasnippet)
