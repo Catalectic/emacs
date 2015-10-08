@@ -2,9 +2,9 @@
 (ac-config-default)
 (ac-set-trigger-key "TAB")
 (setq-default ac-sources '(ac-source-filename
-                           ac-source-abbrev
-                           ac-source-words-in-same-mode-buffers
-                           ac-source-dictionary))
+			   ac-source-abbrev
+			   ac-source-words-in-same-mode-buffers
+			   ac-source-dictionary))
 (setq ac-use-quick-help t)
 
 (ac-flyspell-workaround)
@@ -33,13 +33,12 @@
 (require 'helm-c-yasnippet)
 (setq helm-c-yas-space-match-any-greedy t)
 
-(yas-reload-all)
 (yas-global-mode)
 
 (add-hook 'web-mode-hook
-          #'(lambda ()
-              (setq yas-extra-mode ())
-              (set (make-local-variable 'yas-extra-modes) '(html-mode))))
+	  #'(lambda ()
+	      (setq yas-extra-mode ())
+	      (set (make-local-variable 'yas-extra-modes) '(html-mode))))
 
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
@@ -48,14 +47,3 @@
 (defun helm-highlight-buffers (x y) nil)
 
 (provide 'config-completion)
-
-
-
-
-
-
-
-
-
-
-

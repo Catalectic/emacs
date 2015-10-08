@@ -3,9 +3,9 @@
 (add-to-list 'load-path "~/.emacs.d/")
 (setq package-archives
       '(("gnu" . "http://elpa.gnu.org/packages/")
-        ("marmalade" . "http://marmalade-repo.org/packages/")
-        ("melpa" . "http://melpa.milkbox.net/packages/")
-        ("Tromey" . "http://tromey.com/elpa/")))
+	("marmalade" . "http://marmalade-repo.org/packages/")
+	("melpa" . "http://melpa.milkbox.net/packages/")
+	("Tromey" . "http://tromey.com/elpa/")))
 (package-initialize)
 (require 'config-packages)
 
@@ -20,7 +20,7 @@
 (require 'config-ruby)
 ;(require 'config-mail)
 (require 'config-w3m)
-(require 'config-erc)
+(require 'config-irc)
 (require 'config-my-keys)
 (require 'config-misc)
 
@@ -30,4 +30,3 @@
 (load-theme 'solarized-dark t)
 
 (load-file "~/.emacs.d/config-private.el")
-

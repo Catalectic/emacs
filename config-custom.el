@@ -19,8 +19,9 @@
  '(global-visual-line-mode t)
  '(haskell-mode-hook (quote (turn-on-haskell-indent)))
  '(helm-ff-auto-update-initial-value nil)
- '(js-indent-level 2)
+ '(js-indent-level 4)
  '(kill-whole-line t)
+ '(magit-use-overlays nil)
  '(projectile-globally-ignored-directories
    (quote
     (".idea" ".eunit" ".git" ".hg" ".fslckout" ".bzr" "_darcs" "venv" "build" "log")))

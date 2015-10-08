@@ -75,7 +75,7 @@ With an optional prefix argument prompt user for directory to search in."
      (list (line-beginning-position)
            (line-beginning-position 2)))))
 
-(add-hook 'before-save-hook 'whitespace-cleanup)
+(remove-hook 'before-save-hook 'whitespace-cleanup)
 
 (recentf-mode)
 (run-with-timer 0 1800 'recentf-save-list)

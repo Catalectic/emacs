@@ -3,7 +3,6 @@
 
 (add-to-list 'load-path "~/.emacs.d/emacs-rails/")
 
-(require 'starter-kit-ruby)
 (require 'robe)
 (require 'rspec-mode)
 (require 'smartparens-ruby)

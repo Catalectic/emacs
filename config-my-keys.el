@@ -47,7 +47,7 @@
   '(lambda () (interactive)
      (beginning-of-line)
      (back-to-indentation)))
-(define-key my-keys-minor-mode-map (kbd "C-f") 'projectile-find-file)
+(define-key my-keys-minor-mode-map (kbd "C-f") 'ido-find-file)
 (define-key my-keys-minor-mode-map (kbd "C-v") 'scroll-up-command)
 (define-key my-keys-minor-mode-map (kbd "C-b") 'scroll-down-command)
 (define-key my-keys-minor-mode-map (kbd "C-t") 'projectile-switch-to-buffer)
@@ -102,6 +102,11 @@
   '(lambda () (interactive)
      (call-interactively (key-binding (kbd "M-TAB")))))
 
+(define-key my-keys-minor-mode-map (kbd "<S-up>") 'windmove-up)
+(define-key my-keys-minor-mode-map (kbd "<S-down>") 'windmove-down)
+(define-key my-keys-minor-mode-map (kbd "<S-left>") 'windmove-left)
+(define-key my-keys-minor-mode-map (kbd "<S-right>") 'windmove-right)
+
 (define-key ruby-mode-map (kbd "<f10>")
   '(lambda () (interactive)
      (ruby-load-file (buffer-name))))
@@ -111,8 +116,6 @@
 
 (define-key my-keys-minor-mode-map (kbd "H-3") 'my-split-window)
 
-(define-key ido-file-completion-map (kbd "C-l") 'ido-delete-backward-updir)
-
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to do persistent action
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)  ; make TAB works in terminal
 (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
@@ -120,5 +123,3 @@
 (define-key ruby-mode-map (kbd "C-c H-TAB") 'ruby-dev-start-repl)
 
 (provide 'config-my-keys)
-
-

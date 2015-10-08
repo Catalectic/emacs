@@ -19,6 +19,8 @@
 (defadvice windmove-right (before other-window-now activate)
   (when buffer-file-name (save-buffer)))
 
+	(add-hook 'before-save-hook 'whitespace-cleanup)
+
 (setq sml/no-confirm-load-theme t)
 (setq sml/theme 'dark)
 (sml/setup)
@@ -35,12 +37,12 @@
 (defadvice undo-tree-undo (around keep-region activate)
   (if (use-region-p)
       (let ((m (set-marker (make-marker) (mark)))
-            (p (set-marker (make-marker) (point))))
-        ad-do-it
-        (goto-char p)
-        (set-mark m)
-        (set-marker p nil)
-        (set-marker m nil))
+	    (p (set-marker (make-marker) (point))))
+	ad-do-it
+	(goto-char p)
+	(set-mark m)
+	(set-marker p nil)
+	(set-marker m nil))
     ad-do-it))
 
 (add-hook 'before-revert-hook  (lambda () (kill-ring-save (point-min) (point-max))))
@@ -75,15 +77,15 @@
 
 (defun le::maybe-reveal ()
   (when (and (or (memq major-mode  '(org-mode outline-mode))
-                 (and (boundp 'outline-minor-mode)
-                      outline-minor-mode))
-             (outline-invisible-p))
+		 (and (boundp 'outline-minor-mode)
+		      outline-minor-mode))
+	     (outline-invisible-p))
     (if (eq major-mode 'org-mode)
-        (org-reveal)
+	(org-reveal)
       (show-subtree))))
 
 (add-hook 'session-after-jump-to-last-change-hook
-          'le::maybe-reveal)
+	  'le::maybe-reveal)
 
 (setq gc-cons-threshold 20000000)
 
@@ -101,5 +103,13 @@
 (setq split-width-threshold 2000)
 
 (menu-bar-mode 1)
+(tool-bar-mode -1)
+
+(setq visible-bell t
+      inhibit-startup-message t
+      sentence-end-double-space nil
+      shift-select-mode nil
+      mouse-yank-at-point t
+      uniquify-buffer-name-style 'forward)
 
 (provide 'config-misc)
