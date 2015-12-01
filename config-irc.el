@@ -1,3 +1,5 @@
+(require 'circe)
+
 (define-key circe-mode-map (kbd "<up>") 'lui-previous-input)
 (define-key circe-mode-map (kbd "<down>") 'lui-next-input)
 
