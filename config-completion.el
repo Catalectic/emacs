@@ -32,6 +32,7 @@
 (require 'yasnippet)
 (require 'helm-c-yasnippet)
 (setq helm-c-yas-space-match-any-greedy t)
+(setq projectile-enable-caching t)
 
 (yas-global-mode)
 
