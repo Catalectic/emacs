@@ -94,6 +94,8 @@
 (define-key my-keys-minor-mode-map (kbd "C-c b") 'rspec-verify)
 (define-key my-keys-minor-mode-map (kbd "C-c p") 'projectile-ag)
 
+(define-key prog-mode-map (kbd "<tab>") 'company-complete)
+
 (define-key my-keys-minor-mode-map (kbd "<C-tab>")
   '(lambda () (interactive)
      (call-interactively (key-binding (kbd "M-TAB")))))

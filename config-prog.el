@@ -1,6 +1,3 @@
-; Clean-up starter-kit hooks
-(remove-hook 'prog-mode-hook 'whitespace-mode)
-(remove-hook 'prog-mode-hook 'idle-highlight-mode)
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 ; Keybindings
@@ -8,6 +5,7 @@
 (define-key prog-mode-map (kbd "M-e") 'end-of-defun)
 (define-key prog-mode-map (kbd "RET") 'newline-and-indent)
 
+(require 'eclimd)
 
 (require 'smartparens-config)
 (smartparens-global-mode)
@@ -27,6 +25,8 @@
 (require 'web-mode)
 ; Hack to get syntax highlight to work automatically
 (add-hook 'web-mode-hook (lambda () (font-lock-mode 0)))
+
+(setq-default indent-tabs-mode nil)
 
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))

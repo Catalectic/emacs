@@ -10,10 +10,13 @@
  '(auto-indent-key-for-end-of-line-then-newline "<M-RET>" t)
  '(auto-indent-on-save-file nil)
  '(delete-selection-mode t)
+ '(eclim-eclipse-dirs
+   (quote
+    ("/home/catalectic/eclipse" "/usr/lib/eclipse" "/usr/local/lib/eclipse" "/usr/share/eclipse")))
+ '(eclim-executable "/home/catalectic/eclipse/eclim")
  '(enable-recursive-minibuffers nil)
  '(erc-server-reconnect-attempts t)
  '(font-use-system-font nil)
- '(global-auto-complete-mode t)
  '(global-hi-lock-mode nil)
  '(global-undo-tree-mode t)
  '(global-visual-line-mode t)
@@ -22,6 +25,9 @@
  '(js-indent-level 4)
  '(kill-whole-line t)
  '(magit-use-overlays nil)
+ '(package-selected-packages
+   (quote
+    (company company-ghc company-web emacs-eclim markdown-mode eruby-mode shorten yari whitespace-cleanup-mode web-mode vagrant-tramp undo-tree twittering-mode tracking solarized-theme smex smartparens smart-mode-line shm sass-mode rvm ruby-dev rspec-mode robe real-auto-save rainbow-mode projectile-rails powerline pos-tip paredit multiple-cursors multi magit jump json-mode ido-ubiquitous idle-highlight-mode hide-lines helm-projectile helm-dash helm-c-yasnippet god-mode git-timemachine ghci-completion ghc flycheck-haskell flx-ido fastnav expand-region exec-path-from-shell elscreen coffee-mode circe chm-view browse-kill-ring ag ace-jump-buffer)))
  '(projectile-globally-ignored-directories
    (quote
     (".idea" ".eunit" ".git" ".hg" ".fslckout" ".bzr" "_darcs" "venv" "build" "log")))

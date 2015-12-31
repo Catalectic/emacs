@@ -25,10 +25,6 @@
 
 (add-hook 'ruby-mode-hook
           (lambda ()
-            (add-to-list 'ac-sources 'ac-source-robe)))
-
-(add-hook 'ruby-mode-hook
-          (lambda ()
             (rvm-use "ruby-2.0.0p353" "rails3.2")))
 
 (setq ruby-insert-encoding-magic-comment nil)
