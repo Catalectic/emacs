@@ -19,7 +19,7 @@
 (require 'config-prog)
 (require 'config-ruby)
 ;(require 'config-mail)
-(require 'config-w3m)
+(require 'config-web)
 (require 'config-irc)
 (require 'config-my-keys)
 (require 'config-misc)
