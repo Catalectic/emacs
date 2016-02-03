@@ -25,8 +25,7 @@
           (define-key eww-mode-map (kbd "L") 'eww-forward-url)
           (define-key eww-mode-map (kbd "y") 'eww-copy-page-url)
           (define-key eww-mode-map "f" 'eww-lnum-follow)
-          (define-key eww-mode-map "F" 'eww-lnum-universal))
-          ))
+          (define-key eww-mode-map "F" 'eww-lnum-universal)))
 
 (setq eww-search-prefix "https://google.com/search?q=")
 
