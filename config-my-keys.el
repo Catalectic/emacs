@@ -92,17 +92,15 @@
 
 (define-key my-keys-minor-mode-map (kbd "C-c s") 'rspec-verify-single)
 (define-key my-keys-minor-mode-map (kbd "C-c b") 'rspec-verify)
-(define-key my-keys-minor-mode-map (kbd "C-c p") 'projectile-ag)
+(define-key my-keys-minor-mode-map (kbd "C-c p") 'helm-projectile-ag)
+
+(eval-after-load "java"
+  '(define-key java-mode-map (kbd "<tab>") 'company-complete)
+)
 
 (define-key prog-mode-map (kbd "<tab>") 'company-complete)
-
-(define-key my-keys-minor-mode-map (kbd "<C-tab>")
-  '(lambda () (interactive)
-     (call-interactively (key-binding (kbd "M-TAB")))))
-
-(define-key my-keys-minor-mode-map (kbd "<backtab>")
-  '(lambda () (interactive)
-     (call-interactively (key-binding (kbd "M-TAB")))))
+(define-key yas-minor-mode-map (kbd "TAB") nil)
+(define-key yas-minor-mode-map (kbd "<C-tab>") 'yas-expand)
 
 (define-key my-keys-minor-mode-map (kbd "<S-up>") 'windmove-up)
 (define-key my-keys-minor-mode-map (kbd "<S-down>") 'windmove-down)

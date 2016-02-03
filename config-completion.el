@@ -27,4 +27,6 @@
 ; Hack for performance in Helm, especially to switch buffers
 (defun helm-highlight-buffers (x y) nil)
 
+(add-hook 'helm-mode-hook 'helm-toggle-truncate-line)
+
 (provide 'config-completion)
