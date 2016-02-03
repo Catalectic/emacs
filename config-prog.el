@@ -14,17 +14,18 @@
 (setq sp-ignore-modes-list '(minibuffer-inactive-mode erc-mode w3m-mode))
 
 (add-hook 'lisp-mode-hook
-	   (lambda ()
-	     (set (make-local-variable 'lisp-indent-function)
-		  'common-lisp-indent-function)))
+           (lambda ()
+             (set (make-local-variable 'lisp-indent-function)
+                  'common-lisp-indent-function)))
 
 ; Web-mode
 
-(setq rails-auto-mode-alist nil)
-
 (require 'web-mode)
-; Hack to get syntax highlight to work automatically
-(add-hook 'web-mode-hook (lambda () (font-lock-mode 0)))
+(setq js-indent-level 4
+      rails-auto-mode-alist nil
+      web-mode-markup-indent-offset 2
+      web-mode-css-indent-offset 4
+      web-mode-code-indent-offset 4)
 
 (setq-default indent-tabs-mode nil)
 
