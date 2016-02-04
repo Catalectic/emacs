@@ -8,7 +8,11 @@
 (eval-after-load "ace-jump-mode"
   '(ace-jump-mode-enable-mark-sync))
 
-(require 'helm)
+(require 'helm-config)
+(helm-adaptive-mode 1)
+(helm-push-mark-mode 1)
+(add-hook 'helm-mode-hook 'helm-toggle-truncate-line)
+
 (require 'yasnippet)
 (require 'helm-c-yasnippet)
 (setq helm-c-yas-space-match-any-greedy t)
@@ -24,9 +28,5 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
-; Hack for performance in Helm, especially to switch buffers
-(defun helm-highlight-buffers (x y) nil)
-
-(add-hook 'helm-mode-hook 'helm-toggle-truncate-line)
 
 (provide 'config-completion)
