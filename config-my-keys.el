@@ -90,17 +90,15 @@
      (set-window-dedicated-p (selected-window) 1)
      (message "Active window is now sticky")))
 
+(add-hook 'java-mode-hook
+  (lambda ()
+    (define-key java-mode-map (kbd "TAB") 'auto-complete)))
+
+(define-key prog-mode-map (kbd "<tab>") 'auto-complete)
+
 (define-key my-keys-minor-mode-map (kbd "C-c s") 'rspec-verify-single)
 (define-key my-keys-minor-mode-map (kbd "C-c b") 'rspec-verify)
 (define-key my-keys-minor-mode-map (kbd "C-c p") 'helm-projectile-ag)
-
-(eval-after-load "java"
-  '(define-key java-mode-map (kbd "<tab>") 'company-complete)
-)
-
-(define-key prog-mode-map (kbd "<tab>") 'company-complete)
-(define-key yas-minor-mode-map (kbd "TAB") nil)
-(define-key yas-minor-mode-map (kbd "<C-tab>") 'yas-expand)
 
 (define-key my-keys-minor-mode-map (kbd "<S-up>") 'windmove-up)
 (define-key my-keys-minor-mode-map (kbd "<S-down>") 'windmove-down)

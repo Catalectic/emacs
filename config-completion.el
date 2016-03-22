@@ -1,7 +1,13 @@
-(require 'company)
-(require 'company-emacs-eclim)
-(company-emacs-eclim-setup)
-(global-company-mode t)
+(require 'auto-complete-config)
+(ac-config-default)
+(require 'ac-emacs-eclim-source)
+(ac-emacs-eclim-config)
+
+(add-hook 'java-mode-hook
+  (lambda ()
+    (setq ac-sources '(ac-source-emacs-eclim))))
+
+(setq ac-auto-start nil)
 
 (setq eldoc-idle-delay 0.2)
 
@@ -17,8 +23,6 @@
 (require 'helm-c-yasnippet)
 (setq helm-c-yas-space-match-any-greedy t)
 (setq projectile-enable-caching t)
-
-(yas-global-mode)
 
 (add-hook 'web-mode-hook
           #'(lambda ()

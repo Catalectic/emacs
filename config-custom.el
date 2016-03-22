@@ -26,7 +26,7 @@
  '(magit-use-overlays nil)
  '(package-selected-packages
    (quote
-    (helm helm-core helm-ag eww-lnum company company-ghc company-web emacs-eclim markdown-mode eruby-mode shorten yari whitespace-cleanup-mode web-mode vagrant-tramp undo-tree twittering-mode tracking solarized-theme smex smartparens smart-mode-line shm sass-mode rvm ruby-dev rspec-mode robe real-auto-save rainbow-mode projectile-rails powerline pos-tip paredit multiple-cursors multi magit jump json-mode ido-ubiquitous idle-highlight-mode hide-lines helm-projectile helm-dash helm-c-yasnippet god-mode git-timemachine ghci-completion ghc flycheck-haskell flx-ido fastnav expand-region exec-path-from-shell elscreen coffee-mode circe chm-view browse-kill-ring ag ace-jump-buffer)))
+    (auto-complete helm-flx slack helm helm-core helm-ag eww-lnum emacs-eclim markdown-mode eruby-mode shorten yari whitespace-cleanup-mode web-mode vagrant-tramp undo-tree twittering-mode tracking solarized-theme smex smartparens smart-mode-line shm sass-mode rvm ruby-dev rspec-mode robe real-auto-save rainbow-mode projectile-rails powerline pos-tip paredit multiple-cursors multi magit jump json-mode ido-ubiquitous idle-highlight-mode hide-lines helm-projectile helm-dash helm-c-yasnippet god-mode git-timemachine ghci-completion ghc flycheck-haskell flx-ido fastnav expand-region exec-path-from-shell elscreen coffee-mode circe chm-view browse-kill-ring ag ace-jump-buffer)))
  '(projectile-globally-ignored-directories
    (quote
     (".idea" ".eunit" ".git" ".hg" ".fslckout" ".bzr" "_darcs" "venv" "build" "log")))
