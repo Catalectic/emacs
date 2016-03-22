@@ -32,5 +32,10 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook 'highlight-symbol-mode)
+
+(setq highlight-symbol-on-navigation-p t
+      highlight-symbol-idle-delay 0.1)
 
 (provide 'config-completion)
