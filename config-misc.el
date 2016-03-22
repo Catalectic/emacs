@@ -110,4 +110,8 @@
       mouse-yank-at-point t
       uniquify-buffer-name-style 'forward)
 
+(setq select-active-regions t
+      select-enable-clipboard t
+      select-enable-primary t)
+
 (provide 'config-misc)

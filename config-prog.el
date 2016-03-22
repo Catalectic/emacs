@@ -25,7 +25,8 @@
       rails-auto-mode-alist nil
       web-mode-markup-indent-offset 2
       web-mode-css-indent-offset 4
-      web-mode-code-indent-offset 4)
+      web-mode-code-indent-offset 4
+      sgml-basic-offset 4)
 
 (setq-default indent-tabs-mode nil)
 
