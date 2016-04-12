@@ -64,6 +64,10 @@
 (define-key my-keys-minor-mode-map (kbd "C-=") 'er/expand-region)
 (define-key my-keys-minor-mode-map (kbd "C-.") 'isearch-forward-symbol-at-point)
 
+(define-key my-keys-minor-mode-map (kbd "C-c -") 'vimish-fold-delete)
+(define-key my-keys-minor-mode-map (kbd "C-c +") 'vimish-fold)
+(define-key my-keys-minor-mode-map (kbd "C-c =") 'my-vimish-fold-defun)
+
 (define-key my-keys-minor-mode-map (kbd "C-c j") 'repeat-shell-command)
 (define-key my-keys-minor-mode-map (kbd "C-x b") 'helm-mini)
 (define-key my-keys-minor-mode-map (kbd "C-x C-f") 'helm-projectile)

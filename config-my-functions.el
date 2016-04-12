@@ -75,7 +75,12 @@ With an optional prefix argument prompt user for directory to search in."
      (list (line-beginning-position)
            (line-beginning-position 2)))))
 
-(remove-hook 'before-save-hook 'whitespace-cleanup)
+(defun my-vimish-fold-defun ()
+  "Fold currently active defun."
+  (interactive)
+  (mark-defun)
+  (vimish-fold (region-beginning) (region-end)))
+
 
 (recentf-mode)
 (run-with-timer 0 1800 'recentf-save-list)
