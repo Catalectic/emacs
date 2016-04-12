@@ -43,4 +43,36 @@
 (projectile-global-mode)
 (setq projectile-require-project-root nil)
 
+(setq projectile-switch-project-action
+      #'projectile-commander)
+
+(def-projectile-commander-method ?A
+    "Find ag on project."
+    (call-interactively 'helm-projectile-ag))
+
+(def-projectile-commander-method ?s
+  "Open a *shell* buffer for the project."
+  (shell (get-buffer-create
+          (format "*shell %s*"
+                  (projectile-project-name)))))
+
+(def-projectile-commander-method ?c
+  "Run `compile' in the project."
+  (call-interactively #'compile))
+
+
+(def-projectile-commander-method ?\C-?
+  "Go back to project selection."
+  (projectile-switch-project))
+
+
+(def-projectile-commander-method ?d
+  "Open project root in dired."
+  (projectile-dired))
+
+(def-projectile-commander-method ?F
+  "Git fetch."
+  (magit-status)
+  (call-interactively #'magit-fetch-all))
+
 (provide 'config-prog)

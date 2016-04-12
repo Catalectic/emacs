@@ -98,7 +98,7 @@
 
 (define-key my-keys-minor-mode-map (kbd "C-c s") 'rspec-verify-single)
 (define-key my-keys-minor-mode-map (kbd "C-c b") 'rspec-verify)
-(define-key my-keys-minor-mode-map (kbd "C-c p") 'helm-projectile-ag)
+(define-key my-keys-minor-mode-map (kbd "C-c p") 'projectile-commander)
 
 (define-key my-keys-minor-mode-map (kbd "<S-up>") 'windmove-up)
 (define-key my-keys-minor-mode-map (kbd "<S-down>") 'windmove-down)
