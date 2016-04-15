@@ -114,4 +114,13 @@
       select-enable-clipboard t
       select-enable-primary t)
 
+(defadvice pop-to-mark-command
+    (around ensure-new-position activate)
+  (let ((p (point)))
+    (dotimes (i 10)
+      (when (= p (point))
+        ad-do-it))))
+
+(setq set-mark-command-repeat-pop t)
+
 (provide 'config-misc)
