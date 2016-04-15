@@ -1,6 +1,7 @@
 (defvar installed-packages-list "~/.emacs.d/packages.txt")
 
 (defun save-installed-packages-list ()
+  (interactive)
   (with-temp-file installed-packages-list
     (if (file-exists-p installed-packages-list)
         (progn (erase-buffer)
