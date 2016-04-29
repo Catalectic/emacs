@@ -75,6 +75,18 @@
   (magit-status)
   (call-interactively #'magit-fetch-all))
 
+(def-projectile-commander-method ?f
+    "Find file in project."
+    (helm-projectile))
+
+(def-projectile-commander-method ?M
+    "Run Helm mini buffer"
+    (helm-mini))
+
+(def-projectile-commander-method ?S
+    "Split windows"
+    (my-split-window))
+
 (add-hook 'magit-mode-hook 'turn-on-magit-gh-pulls)
 
 (provide 'config-prog)
