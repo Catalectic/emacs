@@ -13,6 +13,8 @@
 (setq slack-buffer-emojify t)
 (setq slack-room-subscription nil)
 
+(add-hook 'circe-mode-hook 'circe-lagmon-mode)
+
 (defmethod slack-room-subscribedp ((_room slack-room) _team)
   t)
 
