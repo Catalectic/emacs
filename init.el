@@ -3,11 +3,9 @@
 (add-to-list 'load-path "~/.emacs.d/")
 (setq package-archives
       '(("gnu" . "http://elpa.gnu.org/packages/")
-	("marmalade" . "http://marmalade-repo.org/packages/")
-	("melpa" . "http://melpa.milkbox.net/packages/")
-	("Tromey" . "http://tromey.com/elpa/")))
+        ("marmalade" . "https://marmalade-repo.org/packages/")
+        ("melpa" . "https://melpa.org/packages")))
 (package-initialize)
-(require 'config-packages)
 
 (require 'projectile)
 (require 'move-lines)
@@ -25,7 +23,7 @@
 (require 'config-misc)
 
 
-(setq custom-file "~/.emacs.d/config-custom.el")
+(Setq custom-file "~/.emacs.d/config-custom.el")
 (load custom-file)
 (load-theme 'solarized-dark t)
 
