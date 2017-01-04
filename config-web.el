@@ -15,9 +15,9 @@
 
 (setq browse-url-browser-function 'choose-browser)
 
-(setq shr-blocked-images ".*"
-      shr-use-colors nil
-      shr-use-fonts nil)
+(setq shr-blocked-images nil
+      shr-use-colors t
+      shr-use-fonts t)
 
 (eval-after-load "eww"
   '(progn (define-key eww-mode-map (kbd "o") 'eww)
