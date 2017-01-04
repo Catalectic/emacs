@@ -1,5 +1,3 @@
-(add-hook 'after-init-hook 'save-installed-packages-list)
-
 (defun my-forward-to-indentation (n)
   "Move forward ARG lines and position at first nonblank character, skipping blank lines."
   (interactive "p")
