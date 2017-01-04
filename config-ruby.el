@@ -18,6 +18,9 @@
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
 (add-hook 'ruby-mode-hook 'robe-mode)
 
+(eval-after-load 'company
+  '(push 'company-robe company-backends))
+
 
 (add-hook 'ruby-mode-hook
           (lambda ()
@@ -33,4 +36,3 @@
 (define-key inf-ruby-mode-map (kbd "<down>") 'comint-next-input)
 
 (provide 'config-ruby)
-

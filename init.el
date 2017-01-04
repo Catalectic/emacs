@@ -23,7 +23,7 @@
 (require 'config-misc)
 
 
-(Setq custom-file "~/.emacs.d/config-custom.el")
+(setq custom-file "~/.emacs.d/config-custom.el")
 (load custom-file)
 (load-theme 'solarized-dark t)
 

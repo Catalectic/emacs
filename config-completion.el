@@ -1,13 +1,7 @@
-(require 'auto-complete-config)
-(ac-config-default)
-(require 'ac-emacs-eclim-source)
-(ac-emacs-eclim-config)
-
-(add-hook 'java-mode-hook
-  (lambda ()
-    (setq ac-sources '(ac-source-emacs-eclim))))
-
-(setq ac-auto-start nil)
+(require 'eclim)
+(require 'company-emacs-eclim)
+(global-company-mode)
+(global-eclim-mode)
 
 (setq eldoc-idle-delay 0.2)
 

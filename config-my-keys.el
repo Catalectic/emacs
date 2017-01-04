@@ -97,9 +97,9 @@
 
 (add-hook 'java-mode-hook
   (lambda ()
-    (define-key java-mode-map (kbd "TAB") 'auto-complete)))
+    (define-key java-mode-map (kbd "TAB") 'company-complete)))
 
-(define-key prog-mode-map (kbd "<tab>") 'auto-complete)
+(define-key prog-mode-map (kbd "<tab>") 'company-complete)
 
 (define-key my-keys-minor-mode-map (kbd "C-c s") 'rspec-verify-single)
 (define-key my-keys-minor-mode-map (kbd "C-c b") 'rspec-verify)
