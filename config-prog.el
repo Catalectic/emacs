@@ -7,11 +7,8 @@
 
 (require 'eclimd)
 
-(require 'smartparens-config)
-(smartparens-global-mode)
-(show-smartparens-global-mode)
-(show-paren-mode -1)
-(setq sp-ignore-modes-list '(minibuffer-inactive-mode erc-mode w3m-mode))
+(add-hook 'prog-mode-hook 'smartparens-mode)
+(add-hook 'prog-mode-hook 'show-smartparens-mode)
 
 (add-hook 'lisp-mode-hook
            (lambda ()
@@ -21,7 +18,7 @@
 ; Web-mode
 
 (require 'web-mode)
-(setq js-indent-level 4
+(setq js-indent-level 2
       rails-auto-mode-alist nil
       web-mode-markup-indent-offset 2
       web-mode-css-indent-offset 4
@@ -29,6 +26,8 @@
       sgml-basic-offset 4)
 
 (setq-default indent-tabs-mode nil)
+
+(add-hook 'haskell-mode-hook 'intero-mode)
 
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
