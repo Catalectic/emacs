@@ -95,10 +95,8 @@
      (set-window-dedicated-p (selected-window) 1)
      (message "Active window is now sticky")))
 
-(add-hook 'java-mode-hook
-  (lambda ()
-    (define-key java-mode-map (kbd "TAB") 'company-complete)))
-
+(require 'cc-mode)
+(define-key java-mode-map (kbd "<tab>") 'company-complete)
 (define-key prog-mode-map (kbd "<tab>") 'company-complete)
 
 (define-key my-keys-minor-mode-map (kbd "C-c s") 'rspec-verify-single)
@@ -122,6 +120,18 @@
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to do persistent action
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)  ; make TAB works in terminal
 (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
+(define-key helm-map (kbd "C-j")  'helm-next-line)
+(define-key helm-map (kbd "C-k")  'helm-previous-line)
+(define-key helm-map (kbd "C-b")  'helm-previous-page)
+
+(define-key company-active-map (kbd "C-k") 'company-select-previous)
+(define-key company-active-map (kbd "C-j") 'company-select-next)
+
+(require 'magit)
+(define-key magit-file-section-map (kbd "C-j") 'next-line)
+(define-key magit-file-section-map (kbd "C-k") 'previous-line)
+(define-key magit-hunk-section-map (kbd "C-j") 'next-line)
+(define-key magit-hunk-section-map (kbd "C-k") 'previous-line)
 
 (define-key ruby-mode-map (kbd "C-c H-TAB") 'ruby-dev-start-repl)
 
