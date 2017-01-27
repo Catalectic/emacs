@@ -102,7 +102,8 @@
 (menu-bar-mode 1)
 (tool-bar-mode -1)
 
-(setq visible-bell t
+(setq visible-bell nil
+      ring-bell-function 'ignore
       inhibit-startup-message t
       confirm-kill-emacs 'yes-or-no-p
       sentence-end-double-space nil
