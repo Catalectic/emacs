@@ -40,6 +40,19 @@
   (kill-buffer)
   (projectile-project-buffers-other-buffer))
 
+(defun switch-frame ()
+(interactive)
+  (when (not (minibufferp))
+    (let* (
+        (frames (frame-list))
+        (frame-to (ido-completing-read "Select Frame:  "
+          (mapcar (lambda (frame) (frame-parameter frame 'name)) frames))))
+      (catch 'break
+        (while frames
+          (let ((frame (car frames)))
+            (if (equal (frame-parameter frame 'name) frame-to)
+              (throw 'break (select-frame-set-input-focus frame))
+              (setq frames (cdr frames)))))))))
 
 
 (defun projectile-ag (search-term &optional arg)

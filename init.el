@@ -4,13 +4,11 @@
 (setq package-archives
       '(("gnu" . "http://elpa.gnu.org/packages/")
         ("marmalade" . "https://marmalade-repo.org/packages/")
-        ("melpa" . "https://melpa.org/packages")))
+        ("melpa" . "https://melpa.org/packages/")))
 (package-initialize)
 
 (require 'projectile)
 (require 'move-lines)
-(require 'elscreen)
-(elscreen-start)
 
 (require 'config-my-functions)
 (require 'config-completion)

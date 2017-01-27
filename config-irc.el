@@ -9,6 +9,15 @@
       circe-default-user "Circe"
       circe-reduce-lurker-spam t)
 
+; Circe should only consider the active frame when tracking
+(setq tracking-frame-behavior nil)
+
+; Hack to make sure Circe clears visible buffers after switching frames
+(add-hook 'focus-in-hook 'tracking-remove-visible-buffers)
+(add-hook 'focus-in-hook
+          '(lambda () (interactive)
+             (force-mode-line-update t)))
+
 (require 'slack)
 (setq slack-buffer-emojify t)
 (setq slack-room-subscription nil)
