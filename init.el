@@ -3,8 +3,8 @@
 (add-to-list 'load-path "~/.emacs.d/")
 (setq package-archives
       '(("gnu" . "http://elpa.gnu.org/packages/")
-        ("marmalade" . "https://marmalade-repo.org/packages/")
-        ("melpa" . "https://melpa.org/packages/")))
+	("marmalade" . "https://marmalade-repo.org/packages/")
+	("melpa" . "https://melpa.org/packages/")))
 (package-initialize)
 
 (require 'projectile)

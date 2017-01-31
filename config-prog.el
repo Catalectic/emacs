@@ -18,25 +18,28 @@
 ; Web-mode
 
 (require 'web-mode)
-(setq js-indent-level 2
+(setq indent-tabs-mode nil
+      js-indent-level 2
       rails-auto-mode-alist nil
       web-mode-markup-indent-offset 2
       web-mode-css-indent-offset 4
-      web-mode-code-indent-offset 4
-      sgml-basic-offset 4)
+      web-mode-code-indent-offset 2
+      sgml-basic-offset 2)
 
-(setq-default indent-tabs-mode nil)
+(add-to-list 'auto-mode-alist '("\\.jsx$" . rjsx-mode))
+
+(require 'flycheck)
+
+(flycheck-add-mode 'javascript-eslint 'rjsx-mode)
+
+(setq js2-mode-show-strict-warnings nil)
+
+(add-hook 'flycheck-mode-hook 'use-eslint-from-node-modules)
 
 (add-hook 'haskell-mode-hook 'intero-mode)
 
-(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.jsp\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.jst\\.ejs\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.djhtml\\'" .web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
 (projectile-global-mode)

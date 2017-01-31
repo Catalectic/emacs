@@ -92,6 +92,15 @@ With an optional prefix argument prompt user for directory to search in."
   (mark-defun)
   (vimish-fold (region-beginning) (region-end)))
 
+(defun use-eslint-from-node-modules ()
+  (let ((root (locate-dominating-file
+               (or (buffer-file-name) default-directory)
+               (lambda (dir)
+                 (let ((eslint (expand-file-name "node_modules/eslint/bin/eslint.js" dir)))
+                  (and eslint (file-executable-p eslint)))))))
+    (when root
+      (let ((eslint (expand-file-name "node_modules/eslint/bin/eslint.js" root)))
+        (setq-local flycheck-javascript-eslint-executable eslint)))))
 
 (recentf-mode)
 (run-with-timer 0 1800 'recentf-save-list)
