@@ -18,13 +18,14 @@
 ; Web-mode
 
 (require 'web-mode)
-(setq indent-tabs-mode nil
-      js-indent-level 2
+(setq js-indent-level 2
       rails-auto-mode-alist nil
       web-mode-markup-indent-offset 2
       web-mode-css-indent-offset 4
       web-mode-code-indent-offset 2
       sgml-basic-offset 2)
+
+(setq-default indent-tabs-mode nil)
 
 (add-to-list 'auto-mode-alist '("\\.jsx$" . rjsx-mode))
 
