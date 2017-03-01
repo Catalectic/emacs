@@ -1,28 +1,43 @@
-(require 'circe)
+(require 'erc)
 
-(define-key circe-mode-map (kbd "<up>") 'lui-previous-input)
-(define-key circe-mode-map (kbd "<down>") 'lui-next-input)
+(setq erc-join-buffer 'bury
+      erc-query-buffer 'bury
+      erc-kill-buffer-on-part t
+      erc-kill-queries-on-quit t
+      erc-kill-server-buffer-on-quit t
+      erc-server-reconnect-attempts t)
 
-(setq circe-default-part-message "Quitter"
-      circe-default-quit-message "Quitter"
-      circe-default-realname "Real"
-      circe-default-user "Circe"
-      circe-reduce-lurker-spam t)
+(setq erc-prompt-for-nickserv-password nil
+      erc-user-full-name "Real"
+      erc-user-information "Real")
 
-; Circe should only consider the active frame when tracking
-(setq tracking-frame-behavior nil)
+(setq erc-track-enable-keybindings nil
+      erc-track-exclude-server-buffer t
+      erc-track-showcount t
+      erc-track-position-in-mode-line t
+      erc-track-visibility nil)
+
+(setq erc-hide-list '("NICK" "JOIN" "PART" "QUIT"))
 
 ; Hack to make sure Circe clears visible buffers after switching frames
-(add-hook 'focus-in-hook 'tracking-remove-visible-buffers)
+(add-hook 'focus-in-hook 'erc-modified-channels-update)
 (add-hook 'focus-in-hook
           '(lambda () (interactive)
              (force-mode-line-update t)))
 
+(require 'erc-youtube)
+(require 'erc-tweet)
+(add-to-list 'erc-modules 'services)
+(add-to-list 'erc-modules 'youtube)
+(add-to-list 'erc-modules 'tweet)
+(erc-update-modules)
+
+(erc-truncate-mode)
+
 (require 'slack)
+
 (setq slack-buffer-emojify t)
 (setq slack-room-subscription nil)
-
-(add-hook 'circe-mode-hook 'circe-lagmon-mode)
 
 (defmethod slack-room-subscribedp ((_room slack-room) _team)
   t)
