@@ -1,5 +1,6 @@
 (require 'eclim)
 (require 'company-emacs-eclim)
+(company-emacs-eclim-setup)
 (global-company-mode)
 (global-eclim-mode)
 
