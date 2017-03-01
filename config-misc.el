@@ -124,4 +124,37 @@
 
 (setq set-mark-command-repeat-pop t)
 
+(setq-default fill-column 100)
+
+(setq-default mode-line-position
+  `((9 ,(propertize
+             "[%l,%c]"
+             'face 'font-lock-constant-face))))
+
+(setq-default mode-line-format
+      (list
+
+       '(:eval (propertize "%b " 'face 'font-lock-keyword-face
+                           'help-echo (buffer-file-name)))
+
+       '(mode-line-position mode-line-position)
+
+       "["
+
+       '(:eval (propertize "%m" 'face 'font-lock-string-face
+                           'help-echo buffer-file-coding-system))
+       "]"
+
+       '(vc-mode vc-mode)
+
+       ""
+
+       '(global-mode-string global-mode-string)
+
+       " -- "
+
+       '(:eval (propertize (format-time-string "%D %H:%M")
+                'face 'font-lock-comment-face))
+))
+
 (provide 'config-misc)
